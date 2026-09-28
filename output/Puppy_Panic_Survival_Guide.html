@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puppy Panic - The New Puppy Owner Survival Guide</title>
+<style>
+@page { size: A4; margin: 0; }
+:root { --accent: #d97706; --accent-soft: #fff7e6; --ink: #1c2b39; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #e9ecef; color: #333;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.book { max-width: 210mm; margin: auto; }
+.page {
+  background: #fff; width: 100%; min-height: 297mm; margin: 25px auto;
+  padding: 22mm 20mm 26mm; position: relative; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+.page::before {  /* gold accent bar */
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 8px;
+  background: var(--accent);
+}
+.cover {
+  background: linear-gradient(135deg, var(--accent-soft), #fff);
+  text-align: center; display: flex; flex-direction: column; justify-content: center;
+}
+.brand { color: var(--accent); font-size: 20px; letter-spacing: 3px; font-weight: bold; }
+h1 { font-size: 46px; line-height: 1.15; color: var(--ink); margin: 20px 0; }
+h2 {
+  color: var(--ink); font-size: 30px; margin-top: 0;
+  border-bottom: 3px solid var(--accent); padding-bottom: 10px;
+}
+h3 { color: var(--accent); margin-bottom: 4px; }
+p, li { font-size: 17px; line-height: 1.7; }
+.subtitle { font-size: 22px; }
+.figure {
+  margin: 25px 0; border-radius: 20px; overflow: hidden; height: 260px;
+  background: #f1f5f9; display: flex; align-items: center; justify-content: center;
+}
+.figure img { width: 100%; height: 100%; object-fit: cover; }
+.placeholder {
+  border: 2px dashed #cbd5e1; color: #64748b; padding: 20px; text-align: center;
+  font-size: 14px;
+}
+.placeholder b { display: block; color: #475569; margin-bottom: 6px; }
+.card {
+  background: var(--accent-soft); border-left: 6px solid var(--accent);
+  padding: 20px; margin: 20px 0; border-radius: 12px; font-size: 17px; line-height: 1.7;
+}
+.checklist { list-style: none; padding: 20px; background: #f8fafc; border-radius: 15px; }
+.checklist li::before {
+  content: ""; display: inline-block; width: 16px; height: 16px; margin-right: 12px;
+  border: 2px solid var(--accent); border-radius: 4px; vertical-align: -2px;
+}
+.toc ol { padding-left: 0; list-style: none; counter-reset: toc; }
+.toc li {
+  counter-increment: toc; display: flex; gap: 12px; padding: 10px 0;
+  border-bottom: 1px dotted #cbd5e1;
+}
+.toc li::before { content: counter(toc, decimal-leading-zero); color: var(--accent); font-weight: bold; }
+.toc a { color: inherit; text-decoration: none; }
+.cta {
+  background: var(--ink); color: #fff; padding: 35px; border-radius: 20px;
+  text-align: center; margin: 25px 0;
+}
+.cta h3 { color: #fff; }
+.cta a {
+  display: inline-block; background: var(--accent); color: #fff; padding: 15px 30px;
+  border-radius: 30px; text-decoration: none; margin-top: 10px; font-weight: bold;
+}
+.note { font-size: 13px; color: #666; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+td, th { border: 1px solid #ddd; padding: 14px 12px; font-size: 16px; text-align: left; }
+th { background: var(--accent-soft); color: var(--ink); }
+.form td:first-child { width: 35%; font-weight: bold; background: #f8fafc; }
+td:empty::after { content: "\00a0"; }
+.footer {
+  position: absolute; bottom: 12mm; left: 20mm; right: 20mm;
+  display: flex; justify-content: space-between; color: #999; font-size: 12px;
+}
+@media print {
+  body { background: #fff; }
+  .page { margin: 0; box-shadow: none; height: 297mm; page-break-after: always; break-after: page; }
+}
+@media (max-width: 600px) {
+  .page { padding: 30px 18px 60px; min-height: auto; margin: 10px auto; }
+  .footer { left: 18px; right: 18px; bottom: 15px; }
+  h1 { font-size: 34px; } h2 { font-size: 24px; } p, li { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="book">
+<section class="page cover"><div class="brand">PUPPY PANIC</div><h1>The New Puppy Owner<br>Survival Guide</h1><p class="subtitle">A complete beginner handbook for raising a happier, calmer and better-trained dog.</p><div class="figure placeholder"><div><b>📷 Add images/cover.jpg</b>Prompt: Happy owner cuddling a golden retriever puppy on a sofa, warm natural light</div></div><p>15+ essential lessons every new puppy owner should know</p></section>
+<section class="page toc"><h2>Inside This Guide</h2><ol><li><a href="#welcome-to-puppy-parenthood">Welcome To Puppy Parenthood 🐾</a></li><li><a href="#preparing-your-home">Preparing Your Home</a></li><li><a href="#understanding-puppy-behaviour">Understanding Puppy Behaviour</a></li><li><a href="#puppy-training-foundations">Puppy Training Foundations</a></li><li><a href="#your-puppy-s-first-30-days">Your Puppy's First 30 Days</a></li><li><a href="#solving-common-problems">Solving Common Problems</a></li><li><a href="#brain-training-for-dogs">Brain Training For Dogs 🧠</a></li><li><a href="#bonus--7-day-puppy-training-challenge">Bonus: 7-Day Puppy Training Challenge</a></li><li><a href="#bonus--daily-puppy-schedule">Bonus: Daily Puppy Schedule</a></li><li><a href="#my-puppy-profile">My Puppy Profile</a></li><li><a href="#my-puppy-progress-tracker">My Puppy Progress Tracker</a></li><li><a href="#continue-your-training-journey">Continue Your Training Journey</a></li></ol><div class="footer"><span>PUPPY PANIC</span><span>2</span></div></section>
+<section class="page" id="welcome-to-puppy-parenthood"><h2>Welcome To Puppy Parenthood 🐾</h2><p>Congratulations on welcoming a new puppy into your life. The first weeks are important because your puppy is learning about your home, your routine and your expectations.</p>
+<p>Many puppy behaviours that frustrate owners are normal parts of development. With patience, consistency and the right guidance, you can build a strong relationship with your dog.</p>
+<div class="card"><b>The Puppy Panic Promise:</b><br>Help owners understand their dogs, create better habits and enjoy the journey.</div><div class="footer"><span>PUPPY PANIC</span><span>3</span></div></section>
+<section class="page" id="preparing-your-home"><h2>Preparing Your Home</h2><ul class="checklist"><li>Safe sleeping area</li><li>Food and water bowls</li><li>Chew toys</li><li>Training treats</li><li>Leash and collar</li><li>Remove dangerous objects (cables, shoes, cleaning products)</li></ul>
+<h3>Remember</h3>
+<p>Your puppy learns from the environment you create.</p><div class="footer"><span>PUPPY PANIC</span><span>4</span></div></section>
+<section class="page" id="understanding-puppy-behaviour"><h2>Understanding Puppy Behaviour</h2><h3>Why Puppies Bite</h3>
+<p>Puppies bite because they explore, play and experience teething. The goal is not punishment. The goal is teaching better choices.</p>
+<h3>Why Puppies Chew</h3>
+<p>Chewing is natural. Provide safe alternatives and reward good decisions.</p>
+<div class="figure placeholder"><div><b>📷 Add images/behaviour.jpg</b>Prompt: Puppy chewing a rope toy on a wooden floor</div></div><div class="footer"><span>PUPPY PANIC</span><span>5</span></div></section>
+<section class="page" id="puppy-training-foundations"><h2>Puppy Training Foundations</h2><h3>First Commands</h3>
+<ul><li>Sit</li><li>Stay</li><li>Come</li><li>Leave It</li><li>Name Recognition</li></ul>
+<div class="card">Short daily training sessions are more effective than long frustrating sessions.</div>
+<div class="figure placeholder"><div><b>📷 Add images/training.jpg</b>Prompt: Owner teaching a puppy to sit with a treat, garden background</div></div><div class="footer"><span>PUPPY PANIC</span><span>6</span></div></section>
+<section class="page" id="your-puppy-s-first-30-days"><h2>Your Puppy's First 30 Days</h2><h3>Week 1</h3>
+<p>Build trust, introduce routines and teach your puppy their name.</p>
+<h3>Week 2</h3>
+<p>Begin basic commands and create consistent habits.</p>
+<h3>Week 3-4</h3>
+<p>Increase training, confidence and independence.</p><div class="footer"><span>PUPPY PANIC</span><span>7</span></div></section>
+<section class="page" id="solving-common-problems"><h2>Solving Common Problems</h2><h3>Puppy Crying At Night</h3>
+<ul><li>Create a bedtime routine</li><li>Provide comfort</li><li>Allow toilet breaks</li></ul>
+<h3>Puppy Jumping</h3>
+<p>Reward calm greetings instead of excited behaviour.</p><div class="footer"><span>PUPPY PANIC</span><span>8</span></div></section>
+<section class="page" id="brain-training-for-dogs"><h2>Brain Training For Dogs 🧠</h2><p>Dogs need mental exercise as well as physical exercise. Brain games can encourage focus, confidence and problem solving.</p>
+<ul><li>Puzzle activities</li><li>Scent games</li><li>Learning challenges</li><li>Training games</li></ul>
+<div class="figure placeholder"><div><b>📷 Add images/brain-games.jpg</b>Prompt: Puppy sniffing out treats in a snuffle mat</div></div><div class="footer"><span>PUPPY PANIC</span><span>9</span></div></section>
+<section class="page" id="bonus--7-day-puppy-training-challenge"><h2>Bonus: 7-Day Puppy Training Challenge</h2><p>Five to ten minutes a day. Tick each day off as you go.</p>
+<table><tr><th>Day</th><th>Focus</th><th>Done</th></tr><tr><td>1</td><td>Name game: say their name, reward eye contact</td><td></td></tr><tr><td>2</td><td>Sit: lure with a treat, reward the moment they sit</td><td></td></tr><tr><td>3</td><td>Handling: gently touch paws and ears, reward calm</td><td></td></tr><tr><td>4</td><td>Come: short recalls indoors, big rewards</td><td></td></tr><tr><td>5</td><td>Leave it: reward looking away from a treat in your hand</td><td></td></tr><tr><td>6</td><td>Settle: reward lying calmly on their bed</td><td></td></tr><tr><td>7</td><td>Review: practise every skill in a new room</td><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>10</span></div></section>
+<section class="page" id="bonus--daily-puppy-schedule"><h2>Bonus: Daily Puppy Schedule</h2><p>Fill in your own times. Consistency is what matters most.</p>
+<table><tr><th>Time</th><th>Activity</th><th>Notes</th></tr><tr><td></td><td>Wake up + toilet break</td><td></td></tr><tr><td></td><td>Breakfast</td><td></td></tr><tr><td></td><td>Short training session</td><td></td></tr><tr><td></td><td>Nap</td><td></td></tr><tr><td></td><td>Play + toilet break</td><td></td></tr><tr><td></td><td>Dinner</td><td></td></tr><tr><td></td><td>Calm evening wind-down</td><td></td></tr><tr><td></td><td>Last toilet break + bed</td><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>11</span></div></section>
+<section class="page" id="my-puppy-profile"><h2>My Puppy Profile</h2><table class="form"><tr><td>Name</td><td></td></tr><tr><td>Breed</td><td></td></tr><tr><td>Age</td><td></td></tr><tr><td>Favourite Treat</td><td></td></tr><tr><td>Vet Phone Number</td><td></td></tr><tr><td>Training Goal</td><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>12</span></div></section>
+<section class="page" id="my-puppy-progress-tracker"><h2>My Puppy Progress Tracker</h2><table><tr><th>Skill</th><th>Week 1</th><th>Week 2</th><th>Week 3</th><th>Week 4</th></tr><tr><td>Sit</td><td></td><td></td><td></td><td></td></tr><tr><td>Come</td><td></td><td></td><td></td><td></td></tr><tr><td>Stay</td><td></td><td></td><td></td><td></td></tr><tr><td>Leave It</td><td></td><td></td><td></td><td></td></tr><tr><td>Name</td><td></td><td></td><td></td><td></td></tr><tr><td>Loose Lead</td><td></td><td></td><td></td><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>13</span></div></section>
+<section class="page" id="continue-your-training-journey"><h2>Continue Your Training Journey</h2><p>For owners who want a structured approach with progressive exercises, explore Brain Training For Dogs.</p>
+<div class="cta"><h3>🧠 Explore Brain Training For Dogs</h3><p>A guided training system for developing focus, engagement and learning.</p><a href="https://5065ekt-g52o1p0965oj1yv3wg.hop.clickbank.net/" target="_blank" rel="sponsored noopener">Start Training Your Dog</a></div>
+<p class="note">Disclosure: Puppy Panic may earn a commission if you purchase through this link at no extra cost to you.</p><div class="footer"><span>PUPPY PANIC</span><span>14</span></div></section>
+<section class="page cover"><div class="brand">PUPPY PANIC</div><h1>Your Puppy Journey Starts Today 🐾</h1><p class="subtitle">Every great dog begins with patience, consistency and love.</p></section>
+</div>
+</body>
+</html>
