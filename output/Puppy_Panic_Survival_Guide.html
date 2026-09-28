@@ -16,7 +16,7 @@ body {
 .book { max-width: 210mm; margin: auto; }
 .page {
   background: #fff; width: 100%; min-height: 297mm; margin: 25px auto;
-  padding: 22mm 20mm 26mm; position: relative; overflow: hidden;
+  padding: 18mm 18mm 22mm; position: relative; overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,.08);
 }
 .page::before {  /* gold accent bar */
@@ -30,55 +30,69 @@ body {
 .brand { color: var(--accent); font-size: 20px; letter-spacing: 3px; font-weight: bold; }
 h1 { font-size: 46px; line-height: 1.15; color: var(--ink); margin: 20px 0; }
 h2 {
-  color: var(--ink); font-size: 30px; margin-top: 0;
+  color: var(--ink); font-size: 28px; margin: 0 0 14px;
   border-bottom: 3px solid var(--accent); padding-bottom: 10px;
 }
-h3 { color: var(--accent); margin-bottom: 4px; }
-p, li { font-size: 17px; line-height: 1.7; }
+h3 { color: var(--accent); margin: 18px 0 4px; font-size: 18px; }
+p, li { font-size: 16px; line-height: 1.65; margin: 7px 0; }
+ul { margin: 6px 0; padding-left: 22px; }
 .subtitle { font-size: 22px; }
 .figure {
-  margin: 25px 0; border-radius: 20px; overflow: hidden; height: 260px;
-  background: #f1f5f9; display: flex; align-items: center; justify-content: center;
+  margin: 16px 0; border-radius: 18px; overflow: hidden; background: var(--accent-soft);
 }
-.figure img { width: 100%; height: 100%; object-fit: cover; }
-.placeholder {
-  border: 2px dashed #cbd5e1; color: #64748b; padding: 20px; text-align: center;
-  font-size: 14px;
-}
-.placeholder b { display: block; color: #475569; margin-bottom: 6px; }
+.figure img, .figure svg { display: block; width: 100%; height: 200px; object-fit: cover; }
+.cover .figure svg, .cover .figure img { height: 320px; }
+.figure figcaption { padding: 8px 16px; font-size: 13px; color: #8a6a3b; font-style: italic; }
 .card {
   background: var(--accent-soft); border-left: 6px solid var(--accent);
-  padding: 20px; margin: 20px 0; border-radius: 12px; font-size: 17px; line-height: 1.7;
+  padding: 14px 18px; margin: 16px 0; border-radius: 12px; font-size: 15px; line-height: 1.6;
 }
-.checklist { list-style: none; padding: 20px; background: #f8fafc; border-radius: 15px; }
+.checklist { list-style: none; padding: 14px 18px; background: #f8fafc; border-radius: 15px; }
 .checklist li::before {
-  content: ""; display: inline-block; width: 16px; height: 16px; margin-right: 12px;
+  content: ""; display: inline-block; width: 14px; height: 14px; margin-right: 12px;
   border: 2px solid var(--accent); border-radius: 4px; vertical-align: -2px;
 }
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 8px 0; }
+.steps li { counter-increment: step; position: relative; padding-left: 38px; margin: 8px 0; }
+.steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 1px; width: 26px; height: 26px;
+  border-radius: 50%; background: var(--ink); color: #fff; font-size: 13px;
+  font-weight: bold; display: flex; align-items: center; justify-content: center;
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0; }
+.grid div { background: #f8fafc; border-radius: 12px; padding: 12px 14px; font-size: 14px; line-height: 1.5; }
+.grid b { display: block; color: var(--ink); margin-bottom: 3px; font-size: 15px; }
+.dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.dodont div { border-radius: 12px; padding: 12px 14px; }
+.dodont .do { background: #ecfdf5; } .dodont .dont { background: #fef2f2; }
+.dodont b { display: block; margin-bottom: 4px; }
+.dodont .do b { color: #047857; } .dodont .dont b { color: #b91c1c; }
+.dodont ul { padding-left: 18px; }
+.dodont li { font-size: 14px; }
 .toc ol { padding-left: 0; list-style: none; counter-reset: toc; }
 .toc li {
-  counter-increment: toc; display: flex; gap: 12px; padding: 10px 0;
+  counter-increment: toc; display: flex; gap: 12px; padding: 9px 0; font-size: 16px;
   border-bottom: 1px dotted #cbd5e1;
 }
 .toc li::before { content: counter(toc, decimal-leading-zero); color: var(--accent); font-weight: bold; }
 .toc a { color: inherit; text-decoration: none; }
 .cta {
-  background: var(--ink); color: #fff; padding: 35px; border-radius: 20px;
-  text-align: center; margin: 25px 0;
+  background: var(--ink); color: #fff; padding: 28px; border-radius: 20px;
+  text-align: center; margin: 20px 0;
 }
-.cta h3 { color: #fff; }
+.cta h3 { color: #fff; font-size: 22px; margin-top: 0; }
 .cta a {
-  display: inline-block; background: var(--accent); color: #fff; padding: 15px 30px;
+  display: inline-block; background: var(--accent); color: #fff; padding: 14px 30px;
   border-radius: 30px; text-decoration: none; margin-top: 10px; font-weight: bold;
 }
-.note { font-size: 13px; color: #666; }
-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-td, th { border: 1px solid #ddd; padding: 14px 12px; font-size: 16px; text-align: left; }
+.note { font-size: 12px; color: #666; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+td, th { border: 1px solid #ddd; padding: 9px 10px; font-size: 14px; text-align: left; }
 th { background: var(--accent-soft); color: var(--ink); }
 .form td:first-child { width: 35%; font-weight: bold; background: #f8fafc; }
 td:empty::after { content: "\00a0"; }
 .footer {
-  position: absolute; bottom: 12mm; left: 20mm; right: 20mm;
+  position: absolute; bottom: 10mm; left: 18mm; right: 18mm;
   display: flex; justify-content: space-between; color: #999; font-size: 12px;
 }
 @media print {
@@ -88,52 +102,195 @@ td:empty::after { content: "\00a0"; }
 @media (max-width: 600px) {
   .page { padding: 30px 18px 60px; min-height: auto; margin: 10px auto; }
   .footer { left: 18px; right: 18px; bottom: 15px; }
-  h1 { font-size: 34px; } h2 { font-size: 24px; } p, li { font-size: 16px; }
+  .grid, .dodont { grid-template-columns: 1fr; }
+  h1 { font-size: 34px; } h2 { font-size: 23px; }
+  td, th { padding: 7px 6px; font-size: 13px; }
 }
 </style>
 </head>
 <body>
 <div class="book">
-<section class="page cover"><div class="brand">PUPPY PANIC</div><h1>The New Puppy Owner<br>Survival Guide</h1><p class="subtitle">A complete beginner handbook for raising a happier, calmer and better-trained dog.</p><div class="figure placeholder"><div><b>📷 Add images/cover.jpg</b>Prompt: Happy owner cuddling a golden retriever puppy on a sofa, warm natural light</div></div><p>15+ essential lessons every new puppy owner should know</p></section>
-<section class="page toc"><h2>Inside This Guide</h2><ol><li><a href="#welcome-to-puppy-parenthood">Welcome To Puppy Parenthood 🐾</a></li><li><a href="#preparing-your-home">Preparing Your Home</a></li><li><a href="#understanding-puppy-behaviour">Understanding Puppy Behaviour</a></li><li><a href="#puppy-training-foundations">Puppy Training Foundations</a></li><li><a href="#your-puppy-s-first-30-days">Your Puppy's First 30 Days</a></li><li><a href="#solving-common-problems">Solving Common Problems</a></li><li><a href="#brain-training-for-dogs">Brain Training For Dogs 🧠</a></li><li><a href="#bonus--7-day-puppy-training-challenge">Bonus: 7-Day Puppy Training Challenge</a></li><li><a href="#bonus--daily-puppy-schedule">Bonus: Daily Puppy Schedule</a></li><li><a href="#my-puppy-profile">My Puppy Profile</a></li><li><a href="#my-puppy-progress-tracker">My Puppy Progress Tracker</a></li><li><a href="#continue-your-training-journey">Continue Your Training Journey</a></li></ol><div class="footer"><span>PUPPY PANIC</span><span>2</span></div></section>
-<section class="page" id="welcome-to-puppy-parenthood"><h2>Welcome To Puppy Parenthood 🐾</h2><p>Congratulations on welcoming a new puppy into your life. The first weeks are important because your puppy is learning about your home, your routine and your expectations.</p>
-<p>Many puppy behaviours that frustrate owners are normal parts of development. With patience, consistency and the right guidance, you can build a strong relationship with your dog.</p>
+<section class="page cover"><div class="brand">PUPPY PANIC</div><h1>The New Puppy Owner<br>Survival Guide</h1><p class="subtitle">A complete beginner handbook for raising a happier, calmer and better-trained dog.</p><figure class="figure"><svg viewBox="0 0 420 230" role="img" aria-label="Puppy illustration"><rect width="420" height="230" fill="#fff7e6"/><g fill="#d97706" opacity=".12" transform="translate(40,190) rotate(-20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(90,40) rotate(15)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(300,30) rotate(30)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(375,200) rotate(-10)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(250,205) rotate(20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><ellipse cx="200" cy="205" rx="90" ry="10" fill="#000" opacity=".06"/>
+<g transform="translate(200,125)">
+  <ellipse cx="-44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(20 -44 -6)"/>
+  <ellipse cx="44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(-20 44 -6)"/>
+  <circle r="50" fill="#e8b77a"/>
+  <ellipse cx="-20" cy="-10" rx="17" ry="15" fill="#c98f4f"/>
+  <ellipse cy="22" rx="28" ry="20" fill="#f7e2c2"/>
+  <circle cx="-19" cy="-9" r="7" fill="#1c2b39"/><circle cx="-17" cy="-11" r="2.2" fill="#fff"/>
+  <circle cx="19" cy="-9" r="7" fill="#1c2b39"/><circle cx="21" cy="-11" r="2.2" fill="#fff"/>
+  <ellipse cy="12" rx="9" ry="6.5" fill="#1c2b39"/>
+  <path d="M0 18 v8 M-11 27 q11 9 22 0" stroke="#1c2b39" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M-5 30 q5 12 10 0 z" fill="#f28b82"/>
+</g><path transform="translate(330,70) scale(1.4)" d="M0 10 C-20 -6 -12 -22 0 -12 C12 -22 20 -6 0 10 Z" fill="#f28b82"/><path transform="translate(80,160) scale(0.9)" d="M0 10 C-20 -6 -12 -22 0 -12 C12 -22 20 -6 0 10 Z" fill="#d97706"/></svg></figure><p>16 chapters &middot; step-by-step training &middot; printable worksheets</p></section>
+<section class="page toc"><h2>Inside This Guide</h2><ol><li><a href="#welcome-to-puppy-parenthood">Welcome To Puppy Parenthood</a></li><li><a href="#preparing-your-home">Preparing Your Home</a></li><li><a href="#the-first-48-hours">The First 48 Hours</a></li><li><a href="#understanding-puppy-behaviour">Understanding Puppy Behaviour</a></li><li><a href="#toilet-training-made-simple">Toilet Training Made Simple</a></li><li><a href="#puppy-training-foundations">Puppy Training Foundations</a></li><li><a href="#stay--leave-it-and-settle">Stay, Leave It And Settle</a></li><li><a href="#socialisation--the-window-that-matters">Socialisation: The Window That Matters</a></li><li><a href="#your-puppy-s-first-30-days">Your Puppy's First 30 Days</a></li><li><a href="#solving-common-problems">Solving Common Problems</a></li><li><a href="#brain-training-for-dogs">Brain Training For Dogs</a></li><li><a href="#bonus--7-day-puppy-training-challenge">Bonus: 7-Day Puppy Training Challenge</a></li><li><a href="#bonus--daily-puppy-schedule">Bonus: Daily Puppy Schedule</a></li><li><a href="#my-puppy-profile">My Puppy Profile</a></li><li><a href="#my-puppy-progress-tracker">My Puppy Progress Tracker</a></li><li><a href="#continue-your-training-journey">Continue Your Training Journey</a></li></ol><div class="footer"><span>PUPPY PANIC</span><span>2</span></div></section>
+<section class="page" id="welcome-to-puppy-parenthood"><h2>Welcome To Puppy Parenthood</h2><p>Congratulations on welcoming a new puppy into your life. The first weeks are important because your puppy is learning about your home, your routine and your expectations. Everything they experience now shapes the adult dog they will become.</p>
+<p>Many puppy behaviours that frustrate owners, like biting, crying at night and chewing, are normal parts of development. They are not signs that something is wrong with your puppy or with you. With patience, consistency and the right guidance, you can turn each of them into a learning moment.</p>
+<h3>The Three Golden Rules</h3>
+<div class="grid"><div><b>Reward what you like</b>Behaviour that gets rewarded gets repeated. Catch your puppy doing something right and pay them for it.</div><div><b>Manage what you don't</b>Prevent mistakes before they happen with gates, crates, lead and supervision.</div><div><b>Keep it short</b>Three 5-minute sessions beat one 30-minute session. End while your puppy still wants more.</div><div><b>Stay calm</b>Puppies read your mood. A calm owner raises a calm dog. Shouting only teaches them to fear you.</div></div>
+<h3>How To Use This Guide</h3>
+<p>Read the chapters in order during your first week, then keep the guide handy for the problem-solving pages. Print the worksheets at the back and stick them on your fridge so the whole household follows the same plan.</p>
 <div class="card"><b>The Puppy Panic Promise:</b><br>Help owners understand their dogs, create better habits and enjoy the journey.</div><div class="footer"><span>PUPPY PANIC</span><span>3</span></div></section>
-<section class="page" id="preparing-your-home"><h2>Preparing Your Home</h2><ul class="checklist"><li>Safe sleeping area</li><li>Food and water bowls</li><li>Chew toys</li><li>Training treats</li><li>Leash and collar</li><li>Remove dangerous objects (cables, shoes, cleaning products)</li></ul>
-<h3>Remember</h3>
-<p>Your puppy learns from the environment you create.</p><div class="footer"><span>PUPPY PANIC</span><span>4</span></div></section>
+<section class="page" id="preparing-your-home"><h2>Preparing Your Home</h2><p>Get everything ready before your puppy arrives so the first day is about bonding, not shopping.</p>
+<h3>Shopping Checklist</h3>
+<ul class="checklist"><li>Crate or pen, big enough to stand up and turn around in</li><li>Soft bed and a blanket that smells of their litter (ask the breeder)</li><li>Food and water bowls</li><li>The same puppy food they are already eating</li><li>Small, soft training treats</li><li>3-4 chew toys of different textures</li><li>Collar with ID tag, plus a lightweight lead</li><li>Enzyme cleaner for accidents</li><li>Baby gates for rooms that are off-limits</li></ul>
+<h3>Puppy-Proof Room By Room</h3>
+<div class="grid"><div><b>Living room</b>Lift cables out of reach, move plants, and put remote controls and shoes away.</div><div><b>Kitchen</b>Lock bins and cleaning products away. Keep food off low surfaces.</div><div><b>Bathroom</b>Keep the toilet lid down and medicines stored high.</div><div><b>Garden</b>Check fences for gaps and remove toxic plants and slug pellets.</div></div>
+<div class="card"><b>Tip:</b> Get down on your hands and knees and look around. Anything you can reach at puppy height, your puppy will find.</div><div class="footer"><span>PUPPY PANIC</span><span>4</span></div></section>
+<section class="page" id="the-first-48-hours"><h2>The First 48 Hours</h2><figure class="figure"><svg viewBox="0 0 420 230" role="img" aria-label="Puppy illustration"><rect width="420" height="230" fill="#fff7e6"/><g fill="#d97706" opacity=".12" transform="translate(40,190) rotate(-20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(90,40) rotate(15)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(300,30) rotate(30)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(375,200) rotate(-10)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(250,205) rotate(20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><ellipse cx="200" cy="205" rx="90" ry="10" fill="#000" opacity=".06"/>
+<g transform="translate(200,125)">
+  <ellipse cx="-44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(20 -44 -6)"/>
+  <ellipse cx="44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(-20 44 -6)"/>
+  <circle r="50" fill="#e8b77a"/>
+  <ellipse cx="-20" cy="-10" rx="17" ry="15" fill="#c98f4f"/>
+  <ellipse cy="22" rx="28" ry="20" fill="#f7e2c2"/>
+  <circle cx="-19" cy="-9" r="7" fill="#1c2b39"/><circle cx="-17" cy="-11" r="2.2" fill="#fff"/>
+  <circle cx="19" cy="-9" r="7" fill="#1c2b39"/><circle cx="21" cy="-11" r="2.2" fill="#fff"/>
+  <ellipse cy="12" rx="9" ry="6.5" fill="#1c2b39"/>
+  <path d="M0 18 v8 M-11 27 q11 9 22 0" stroke="#1c2b39" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M-5 30 q5 12 10 0 z" fill="#f28b82"/>
+</g><g transform="translate(335,150)"><path d="M-40 0 L0 -36 L40 0 Z" fill="#d97706"/><rect x="-30" y="0" width="60" height="42" fill="#fff" stroke="#e2c9a0" stroke-width="3"/><rect x="-9" y="16" width="18" height="26" fill="#8b5a2b"/></g></svg><figcaption>A quiet, cosy base helps your puppy settle in.</figcaption></figure>
+<h3>Arrival Day</h3>
+<ol class="steps"><li>Take your puppy straight to their toilet spot outside and wait. Praise them quietly when they go.</li><li>Let them explore one or two rooms at their own pace. Keep visitors away for the first few days.</li><li>Show them their bed and water bowl, then let them nap as much as they want. Puppies sleep 18-20 hours a day.</li><li>Start using their name in a happy voice whenever you feed, play or cuddle them.</li></ol>
+<h3>The First Night</h3>
+<p>Your puppy has just left their mother and littermates, so some crying is normal. Place their crate or bed next to your bed for the first nights so they can hear and smell you. A warm (not hot) water bottle wrapped in a towel and a ticking clock can be comforting. Expect one or two toilet trips during the night for the first weeks.</p><div class="footer"><span>PUPPY PANIC</span><span>5</span></div></section>
 <section class="page" id="understanding-puppy-behaviour"><h2>Understanding Puppy Behaviour</h2><h3>Why Puppies Bite</h3>
-<p>Puppies bite because they explore, play and experience teething. The goal is not punishment. The goal is teaching better choices.</p>
+<p>Puppies explore the world with their mouths, and they learned to play by biting their littermates. Teething between about 3 and 6 months makes it worse. The goal is not punishment. The goal is teaching your puppy what they can bite instead.</p>
 <h3>Why Puppies Chew</h3>
-<p>Chewing is natural. Provide safe alternatives and reward good decisions.</p>
-<div class="figure placeholder"><div><b>📷 Add images/behaviour.jpg</b>Prompt: Puppy chewing a rope toy on a wooden floor</div></div><div class="footer"><span>PUPPY PANIC</span><span>5</span></div></section>
-<section class="page" id="puppy-training-foundations"><h2>Puppy Training Foundations</h2><h3>First Commands</h3>
-<ul><li>Sit</li><li>Stay</li><li>Come</li><li>Leave It</li><li>Name Recognition</li></ul>
-<div class="card">Short daily training sessions are more effective than long frustrating sessions.</div>
-<div class="figure placeholder"><div><b>📷 Add images/training.jpg</b>Prompt: Owner teaching a puppy to sit with a treat, garden background</div></div><div class="footer"><span>PUPPY PANIC</span><span>6</span></div></section>
-<section class="page" id="your-puppy-s-first-30-days"><h2>Your Puppy's First 30 Days</h2><h3>Week 1</h3>
-<p>Build trust, introduce routines and teach your puppy their name.</p>
-<h3>Week 2</h3>
-<p>Begin basic commands and create consistent habits.</p>
-<h3>Week 3-4</h3>
-<p>Increase training, confidence and independence.</p><div class="footer"><span>PUPPY PANIC</span><span>7</span></div></section>
-<section class="page" id="solving-common-problems"><h2>Solving Common Problems</h2><h3>Puppy Crying At Night</h3>
-<ul><li>Create a bedtime routine</li><li>Provide comfort</li><li>Allow toilet breaks</li></ul>
-<h3>Puppy Jumping</h3>
-<p>Reward calm greetings instead of excited behaviour.</p><div class="footer"><span>PUPPY PANIC</span><span>8</span></div></section>
-<section class="page" id="brain-training-for-dogs"><h2>Brain Training For Dogs 🧠</h2><p>Dogs need mental exercise as well as physical exercise. Brain games can encourage focus, confidence and problem solving.</p>
-<ul><li>Puzzle activities</li><li>Scent games</li><li>Learning challenges</li><li>Training games</li></ul>
-<div class="figure placeholder"><div><b>📷 Add images/brain-games.jpg</b>Prompt: Puppy sniffing out treats in a snuffle mat</div></div><div class="footer"><span>PUPPY PANIC</span><span>9</span></div></section>
+<p>Chewing relieves teething pain, burns energy and calms puppies down. You cannot stop it, but you can direct it. Keep two or three chew toys in every room and swap anything they should not have for something they can have.</p>
+<h3>The Zoomies</h3>
+<p>Sudden bursts of wild running, usually in the evening, are a normal way to release energy. Make sure the space is safe and let them run it out. Frequent zoomies can mean your puppy is overtired and needs a nap.</p>
+<h3>Reading Your Puppy's Body Language</h3>
+<table><tr><th>What you see</th><th>What it usually means</th></tr><tr><td>Loose, wiggly body and soft eyes</td><td>Relaxed and happy</td></tr><tr><td>Play bow (front down, bottom up)</td><td>Invitation to play</td></tr><tr><td>Yawning, lip licking, looking away</td><td>Unsure or stressed; give them space</td></tr><tr><td>Tail tucked, ears flat, body low</td><td>Frightened; remove them from the situation</td></tr><tr><td>Stiff body, hard stare, freezing</td><td>Uncomfortable; stop what is happening</td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>6</span></div></section>
+<section class="page" id="toilet-training-made-simple"><h2>Toilet Training Made Simple</h2><p>Toilet training is about timing. The more often your puppy goes in the right place and gets rewarded, the faster they learn. Most puppies are reliable by 4-6 months.</p>
+<h3>Take Your Puppy Out</h3>
+<div class="grid"><div><b>After waking</b>From every nap as well as first thing in the morning.</div><div><b>After eating</b>Usually within 15-30 minutes of a meal.</div><div><b>After play</b>Excitement fills the bladder fast.</div><div><b>Every 1-2 hours</b>A rough guide: puppies can hold on for about their age in months plus one, in hours.</div></div>
+<h3>The Routine</h3>
+<ol class="steps"><li>Go to the same spot every time, on lead, and stand still.</li><li>Say a cue word such as "be quick" while they sniff.</li><li>The moment they finish, praise and give a treat right there.</li><li>If nothing happens within 5 minutes, go back in, watch them closely and try again in 10 minutes.</li></ol>
+<h3>When Accidents Happen</h3>
+<div class="dodont"><div class="do"><b>&#10003; Do</b><ul><li>Calmly pick them up and take them outside</li><li>Clean with an enzyme cleaner to remove the smell</li><li>Go out more often for a few days</li></ul></div><div class="dont"><b>&#10007; Avoid</b><ul><li>Shouting or rubbing their nose in it</li><li>Using ammonia-based cleaners, which smell like urine</li><li>Punishing an accident you did not see happen</li></ul></div></div><div class="footer"><span>PUPPY PANIC</span><span>7</span></div></section>
+<section class="page" id="puppy-training-foundations"><h2>Puppy Training Foundations</h2><p>Puppies can start learning the day they come home. Use food, toys and praise to show them what you want, and keep every session short and fun.</p>
+<h3>Name Recognition</h3>
+<ol class="steps"><li>Say your puppy's name once in a happy voice.</li><li>The moment they look at you, say "yes!" and give a treat.</li><li>Repeat 10 times, a few times a day, in different rooms.</li></ol>
+<h3>Sit</h3>
+<ol class="steps"><li>Hold a treat at your puppy's nose.</li><li>Slowly move it up and back over their head. As their head goes up, their bottom goes down.</li><li>The moment they sit, say "yes!" and give the treat.</li><li>Once they follow the treat every time, say "sit" just before you move your hand.</li></ol>
+<h3>Come</h3>
+<ol class="steps"><li>Start indoors, a few steps away. Crouch down and call their name followed by "come!" in an exciting voice.</li><li>Reward with something extra special every time they reach you.</li><li>Slowly increase the distance, then practise in the garden.</li></ol>
+<div class="card"><b>Never</b> call your puppy to you for something they dislike, like a bath or the end of play. Coming to you should always be the best decision they make.</div><div class="footer"><span>PUPPY PANIC</span><span>8</span></div></section>
+<section class="page" id="stay--leave-it-and-settle"><h2>Stay, Leave It And Settle</h2><h3>Stay</h3>
+<ol class="steps"><li>Ask for a sit. Show a flat palm and say "stay".</li><li>Wait one second, then say "yes!" and reward while they are still sitting.</li><li>Build up slowly: 2 seconds, 5 seconds, 10 seconds.</li><li>Only then add distance: one step back, return, reward.</li></ol>
+<h3>Leave It</h3>
+<ol class="steps"><li>Hold a treat in a closed fist. Let your puppy sniff and lick.</li><li>Wait. The moment they back off or look away, say "yes!" and reward from your other hand.</li><li>When they back off straight away, add the words "leave it".</li><li>Progress to a treat on the floor, covered by your hand if needed.</li></ol>
+<h3>Settle On A Mat</h3>
+<ol class="steps"><li>Sit on a chair with your puppy on lead and a mat or blanket on the floor.</li><li>Ignore them and reward calmly whenever they lie down on the mat.</li><li>Over a few days, reward longer and more relaxed settles.</li></ol>
+<div class="card">Short daily training sessions are more effective than long frustrating sessions. Aim for 3-5 minutes, 3 times a day.</div><div class="footer"><span>PUPPY PANIC</span><span>9</span></div></section>
+<section class="page" id="socialisation--the-window-that-matters"><h2>Socialisation: The Window That Matters</h2><p>Between about 3 and 14 weeks old, puppies accept new experiences easily. What they meet calmly now, they are less likely to fear later. Aim for lots of short, positive introductions. Ask your vet when it is safe for your puppy to walk in public places and meet other dogs; until then, carry them and invite people over.</p>
+<h3>Socialisation Checklist</h3>
+<ul class="checklist"><li>People: men, women, children, people in hats, beards, uniforms</li><li>Sounds: vacuum, doorbell, washing machine, traffic, fireworks recordings</li><li>Surfaces: grass, gravel, tiles, wet ground, metal grates</li><li>Handling: paws, ears, mouth, brushing, nail trims</li><li>Places: car rides, a café, the vet's waiting room (just for treats)</li><li>Animals: a calm, vaccinated adult dog, cats if you have them</li><li>Things: umbrellas, bikes, pushchairs, wheelie bins</li></ul>
+<div class="dodont"><div class="do"><b>&#10003; Do</b><ul><li>Let your puppy approach in their own time</li><li>Pair every new thing with treats</li><li>Keep introductions short and end on a good note</li></ul></div><div class="dont"><b>&#10007; Avoid</b><ul><li>Forcing them towards something scary</li><li>Crowds of strangers all at once</li><li>Rough play with unknown dogs</li></ul></div></div><div class="footer"><span>PUPPY PANIC</span><span>10</span></div></section>
+<section class="page" id="your-puppy-s-first-30-days"><h2>Your Puppy's First 30 Days</h2><h3>Week 1: Settle In</h3>
+<ul><li>Build trust with calm handling and lots of sleep</li><li>Set a toilet routine and mealtimes</li><li>Teach name recognition</li><li>Introduce the crate or pen with meals and treats</li></ul>
+<h3>Week 2: Build Habits</h3>
+<ul><li>Start sit and the first steps of come</li><li>Practise short periods alone (a few minutes in another room)</li><li>Begin handling practice: paws, ears, collar</li></ul>
+<h3>Week 3: Grow Confidence</h3>
+<ul><li>Add stay and leave it</li><li>Introduce new sounds, surfaces and visitors</li><li>Try the first brain games from this guide</li></ul>
+<h3>Week 4: Practise Everywhere</h3>
+<ul><li>Repeat every command in new rooms and the garden</li><li>Work on settle while you eat or watch TV</li><li>Review your progress tracker and pick your next goal</li></ul>
+<div class="card">Every puppy learns at their own speed. If you fall behind, simply repeat the week. Consistency matters more than speed.</div><div class="footer"><span>PUPPY PANIC</span><span>11</span></div></section>
+<section class="page" id="solving-common-problems"><h2>Solving Common Problems</h2><h3>Crying At Night</h3>
+<ul><li>Keep your puppy close to you for the first nights</li><li>Tire them out with play and a toilet trip before bed</li><li>Give a quiet toilet break if they wake, then straight back to bed</li><li>Move the crate further away gradually over a few weeks</li></ul>
+<h3>Biting Hands</h3>
+<ul><li>When teeth touch skin, say "oops", stop play for a few seconds</li><li>Offer a tug toy or chew instead</li><li>If they are overexcited, it is usually nap time</li></ul>
+<h3>Jumping Up</h3>
+<ul><li>Turn away and ignore jumping</li><li>Reward the moment all four paws are on the floor</li><li>Ask visitors to do the same so the rule is consistent</li></ul>
+<h3>Chewing Furniture</h3>
+<ul><li>Supervise, or use a pen when you cannot watch</li><li>Swap the item for a chew toy and praise</li><li>Offer frozen chews during teething</li></ul>
+<h3>Pulling On The Lead</h3>
+<ul><li>Stop walking whenever the lead goes tight</li><li>Move forward again when it goes slack</li><li>Reward them for walking by your side</li></ul><div class="footer"><span>PUPPY PANIC</span><span>12</span></div></section>
+<section class="page" id="brain-training-for-dogs"><h2>Brain Training For Dogs</h2><p>Dogs need mental exercise as well as physical exercise. Ten minutes of brain work can tire a puppy as much as a walk, and it builds focus, confidence and problem-solving.</p>
+<figure class="figure"><svg viewBox="0 0 420 230" role="img" aria-label="Puppy illustration"><rect width="420" height="230" fill="#fff7e6"/><g fill="#d97706" opacity=".12" transform="translate(40,190) rotate(-20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(90,40) rotate(15)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(300,30) rotate(30)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(375,200) rotate(-10)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(250,205) rotate(20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><ellipse cx="200" cy="205" rx="90" ry="10" fill="#000" opacity=".06"/>
+<g transform="translate(200,125)">
+  <ellipse cx="-44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(20 -44 -6)"/>
+  <ellipse cx="44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(-20 44 -6)"/>
+  <circle r="50" fill="#e8b77a"/>
+  <ellipse cx="-20" cy="-10" rx="17" ry="15" fill="#c98f4f"/>
+  <ellipse cy="22" rx="28" ry="20" fill="#f7e2c2"/>
+  <circle cx="-19" cy="-9" r="7" fill="#1c2b39"/><circle cx="-17" cy="-11" r="2.2" fill="#fff"/>
+  <circle cx="19" cy="-9" r="7" fill="#1c2b39"/><circle cx="21" cy="-11" r="2.2" fill="#fff"/>
+  <ellipse cy="12" rx="9" ry="6.5" fill="#1c2b39"/>
+  <path d="M0 18 v8 M-11 27 q11 9 22 0" stroke="#1c2b39" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M-5 30 q5 12 10 0 z" fill="#f28b82"/>
+</g><g transform="translate(335,95)"><circle r="30" fill="#fde68a"/><rect x="-12" y="26" width="24" height="16" rx="4" fill="#94a3b8"/><path d="M0 -48 v-10 M40 -30 l8 -8 M-40 -30 l-8 -8 M48 0 h10 M-48 0 h-10" stroke="#d97706" stroke-width="4" stroke-linecap="round"/></g></svg><figcaption>A tired brain is a calm puppy.</figcaption></figure>
+<h3>Five Games To Try This Week</h3>
+<div class="grid"><div><b>Find it</b>Toss a treat a short way and say "find it". Then hide treats around the room for them to sniff out.</div><div><b>Cup game</b>Hide a treat under one of three cups and let your puppy choose. Reward correct guesses.</div><div><b>Muffin tin puzzle</b>Put treats in a muffin tin and cover each one with a tennis ball.</div><div><b>Snuffle towel</b>Roll treats inside an old towel and let them unroll it.</div><div><b>Touch</b>Teach them to nose-touch your palm. It becomes a handy way to move your puppy anywhere.</div><div><b>Name the toy</b>Say a toy's name each time you play with it. Soon they can fetch it by name.</div></div><div class="footer"><span>PUPPY PANIC</span><span>13</span></div></section>
 <section class="page" id="bonus--7-day-puppy-training-challenge"><h2>Bonus: 7-Day Puppy Training Challenge</h2><p>Five to ten minutes a day. Tick each day off as you go.</p>
-<table><tr><th>Day</th><th>Focus</th><th>Done</th></tr><tr><td>1</td><td>Name game: say their name, reward eye contact</td><td></td></tr><tr><td>2</td><td>Sit: lure with a treat, reward the moment they sit</td><td></td></tr><tr><td>3</td><td>Handling: gently touch paws and ears, reward calm</td><td></td></tr><tr><td>4</td><td>Come: short recalls indoors, big rewards</td><td></td></tr><tr><td>5</td><td>Leave it: reward looking away from a treat in your hand</td><td></td></tr><tr><td>6</td><td>Settle: reward lying calmly on their bed</td><td></td></tr><tr><td>7</td><td>Review: practise every skill in a new room</td><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>10</span></div></section>
-<section class="page" id="bonus--daily-puppy-schedule"><h2>Bonus: Daily Puppy Schedule</h2><p>Fill in your own times. Consistency is what matters most.</p>
-<table><tr><th>Time</th><th>Activity</th><th>Notes</th></tr><tr><td></td><td>Wake up + toilet break</td><td></td></tr><tr><td></td><td>Breakfast</td><td></td></tr><tr><td></td><td>Short training session</td><td></td></tr><tr><td></td><td>Nap</td><td></td></tr><tr><td></td><td>Play + toilet break</td><td></td></tr><tr><td></td><td>Dinner</td><td></td></tr><tr><td></td><td>Calm evening wind-down</td><td></td></tr><tr><td></td><td>Last toilet break + bed</td><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>11</span></div></section>
-<section class="page" id="my-puppy-profile"><h2>My Puppy Profile</h2><table class="form"><tr><td>Name</td><td></td></tr><tr><td>Breed</td><td></td></tr><tr><td>Age</td><td></td></tr><tr><td>Favourite Treat</td><td></td></tr><tr><td>Vet Phone Number</td><td></td></tr><tr><td>Training Goal</td><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>12</span></div></section>
-<section class="page" id="my-puppy-progress-tracker"><h2>My Puppy Progress Tracker</h2><table><tr><th>Skill</th><th>Week 1</th><th>Week 2</th><th>Week 3</th><th>Week 4</th></tr><tr><td>Sit</td><td></td><td></td><td></td><td></td></tr><tr><td>Come</td><td></td><td></td><td></td><td></td></tr><tr><td>Stay</td><td></td><td></td><td></td><td></td></tr><tr><td>Leave It</td><td></td><td></td><td></td><td></td></tr><tr><td>Name</td><td></td><td></td><td></td><td></td></tr><tr><td>Loose Lead</td><td></td><td></td><td></td><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>13</span></div></section>
-<section class="page" id="continue-your-training-journey"><h2>Continue Your Training Journey</h2><p>For owners who want a structured approach with progressive exercises, explore Brain Training For Dogs.</p>
-<div class="cta"><h3>🧠 Explore Brain Training For Dogs</h3><p>A guided training system for developing focus, engagement and learning.</p><a href="https://5065ekt-g52o1p0965oj1yv3wg.hop.clickbank.net/" target="_blank" rel="sponsored noopener">Start Training Your Dog</a></div>
-<p class="note">Disclosure: Puppy Panic may earn a commission if you purchase through this link at no extra cost to you.</p><div class="footer"><span>PUPPY PANIC</span><span>14</span></div></section>
-<section class="page cover"><div class="brand">PUPPY PANIC</div><h1>Your Puppy Journey Starts Today 🐾</h1><p class="subtitle">Every great dog begins with patience, consistency and love.</p></section>
+<table><tr><th>Day</th><th>Focus</th><th>Done</th></tr><tr><td>1</td><td>Name game: say their name, reward eye contact</td><td></td></tr><tr><td>2</td><td>Sit: lure with a treat, reward the moment they sit</td><td></td></tr><tr><td>3</td><td>Handling: gently touch paws and ears, reward calm</td><td></td></tr><tr><td>4</td><td>Come: short recalls indoors, big rewards</td><td></td></tr><tr><td>5</td><td>Leave it: reward looking away from a treat in your hand</td><td></td></tr><tr><td>6</td><td>Settle: reward lying calmly on their bed</td><td></td></tr><tr><td>7</td><td>Review: practise every skill in a new room</td><td></td></tr></table>
+<figure class="figure"><svg viewBox="0 0 420 230" role="img" aria-label="Puppy illustration"><rect width="420" height="230" fill="#fff7e6"/><g fill="#d97706" opacity=".12" transform="translate(40,190) rotate(-20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(90,40) rotate(15)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(300,30) rotate(30)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(375,200) rotate(-10)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(250,205) rotate(20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><ellipse cx="200" cy="205" rx="90" ry="10" fill="#000" opacity=".06"/>
+<g transform="translate(200,125)">
+  <ellipse cx="-44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(20 -44 -6)"/>
+  <ellipse cx="44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(-20 44 -6)"/>
+  <circle r="50" fill="#e8b77a"/>
+  <ellipse cx="-20" cy="-10" rx="17" ry="15" fill="#c98f4f"/>
+  <ellipse cy="22" rx="28" ry="20" fill="#f7e2c2"/>
+  <circle cx="-19" cy="-9" r="7" fill="#1c2b39"/><circle cx="-17" cy="-11" r="2.2" fill="#fff"/>
+  <circle cx="19" cy="-9" r="7" fill="#1c2b39"/><circle cx="21" cy="-11" r="2.2" fill="#fff"/>
+  <ellipse cy="12" rx="9" ry="6.5" fill="#1c2b39"/>
+  <path d="M0 18 v8 M-11 27 q11 9 22 0" stroke="#1c2b39" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M-5 30 q5 12 10 0 z" fill="#f28b82"/>
+</g><g transform="translate(335,145)"><circle r="30" fill="#d97706"/><path d="M-28 -10 q28 22 56 0 M-28 10 q28 -22 56 0" stroke="#fff" stroke-width="4" fill="none"/></g></svg><figcaption>Small wins every day add up fast.</figcaption></figure>
+<div class="card"><b>Finished the week?</b> Start again, this time practising in the garden or with a friend watching.</div><div class="footer"><span>PUPPY PANIC</span><span>14</span></div></section>
+<section class="page" id="bonus--daily-puppy-schedule"><h2>Bonus: Daily Puppy Schedule</h2><p>Here is a sample day for a puppy of 8-12 weeks. Adjust the times to fit your home. Consistency is what matters most.</p>
+<table><tr><th>Time</th><th>Activity</th><th>Your time</th></tr><tr><td>7:00</td><td>Wake up + toilet break</td><td></td></tr><tr><td>7:15</td><td>Breakfast, then toilet break</td><td></td></tr><tr><td>7:45</td><td>Play and a 5-minute training session</td><td></td></tr><tr><td>8:30</td><td>Nap in crate or pen</td><td></td></tr><tr><td>10:30</td><td>Toilet break + explore the garden</td><td></td></tr><tr><td>12:00</td><td>Lunch, toilet break, then nap</td><td></td></tr><tr><td>15:00</td><td>Brain game + toilet break</td><td></td></tr><tr><td>17:00</td><td>Dinner, then toilet break</td><td></td></tr><tr><td>18:00</td><td>Family time and handling practice</td><td></td></tr><tr><td>20:00</td><td>Calm wind-down with a chew</td><td></td></tr><tr><td>22:00</td><td>Last toilet break + bed</td><td></td></tr></table>
+<p class="note">Add a toilet break after every nap, meal and play session, plus once or twice at night for the first few weeks.</p><div class="footer"><span>PUPPY PANIC</span><span>15</span></div></section>
+<section class="page" id="my-puppy-profile"><h2>My Puppy Profile</h2><p>Fill this in and keep it somewhere handy, such as on the fridge.</p>
+<table class="form"><tr><td>Name</td><td></td></tr><tr><td>Breed</td><td></td></tr><tr><td>Date of birth</td><td></td></tr><tr><td>Date they came home</td><td></td></tr><tr><td>Favourite treat</td><td></td></tr><tr><td>Favourite toy</td><td></td></tr><tr><td>Vet name + phone</td><td></td></tr><tr><td>Next vaccination</td><td></td></tr><tr><td>Microchip number</td><td></td></tr><tr><td>My #1 training goal</td><td></td></tr></table>
+<figure class="figure"><svg viewBox="0 0 420 230" role="img" aria-label="Puppy illustration"><rect width="420" height="230" fill="#fff7e6"/><g fill="#d97706" opacity=".12" transform="translate(40,190) rotate(-20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(90,40) rotate(15)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(300,30) rotate(30)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(375,200) rotate(-10)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(250,205) rotate(20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><ellipse cx="200" cy="205" rx="90" ry="10" fill="#000" opacity=".06"/>
+<g transform="translate(200,125)">
+  <ellipse cx="-44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(20 -44 -6)"/>
+  <ellipse cx="44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(-20 44 -6)"/>
+  <circle r="50" fill="#e8b77a"/>
+  <ellipse cx="-20" cy="-10" rx="17" ry="15" fill="#c98f4f"/>
+  <ellipse cy="22" rx="28" ry="20" fill="#f7e2c2"/>
+  <circle cx="-19" cy="-9" r="7" fill="#1c2b39"/><circle cx="-17" cy="-11" r="2.2" fill="#fff"/>
+  <circle cx="19" cy="-9" r="7" fill="#1c2b39"/><circle cx="21" cy="-11" r="2.2" fill="#fff"/>
+  <ellipse cy="12" rx="9" ry="6.5" fill="#1c2b39"/>
+  <path d="M0 18 v8 M-11 27 q11 9 22 0" stroke="#1c2b39" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M-5 30 q5 12 10 0 z" fill="#f28b82"/>
+</g><path transform="translate(330,70) scale(1.4)" d="M0 10 C-20 -6 -12 -22 0 -12 C12 -22 20 -6 0 10 Z" fill="#f28b82"/><path transform="translate(80,160) scale(0.9)" d="M0 10 C-20 -6 -12 -22 0 -12 C12 -22 20 -6 0 10 Z" fill="#d97706"/></svg><figcaption>Stick your favourite photo of your puppy here.</figcaption></figure><div class="footer"><span>PUPPY PANIC</span><span>16</span></div></section>
+<section class="page" id="my-puppy-progress-tracker"><h2>My Puppy Progress Tracker</h2><p>Score each skill every week: 1 = just started, 2 = getting there, 3 = does it every time.</p>
+<table><tr><th>Skill</th><th>Week 1</th><th>Week 2</th><th>Week 3</th><th>Week 4</th></tr><tr><td>Name</td><td></td><td></td><td></td><td></td></tr><tr><td>Sit</td><td></td><td></td><td></td><td></td></tr><tr><td>Come</td><td></td><td></td><td></td><td></td></tr><tr><td>Stay</td><td></td><td></td><td></td><td></td></tr><tr><td>Leave It</td><td></td><td></td><td></td><td></td></tr><tr><td>Settle</td><td></td><td></td><td></td><td></td></tr><tr><td>Toilet outside</td><td></td><td></td><td></td><td></td></tr><tr><td>Loose lead</td><td></td><td></td><td></td><td></td></tr><tr><td>Calm greetings</td><td></td><td></td><td></td><td></td></tr><tr><td>Alone time</td><td></td><td></td><td></td><td></td></tr></table>
+<h3>Notes</h3>
+<table class="form"><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table><div class="footer"><span>PUPPY PANIC</span><span>17</span></div></section>
+<section class="page" id="continue-your-training-journey"><h2>Continue Your Training Journey</h2><p>You now have the foundations: a routine, first commands and a plan for the most common problems. The next step is to keep your puppy's brain busy as they grow.</p>
+<p>For owners who want a structured approach with progressive exercises, explore Brain Training For Dogs. It builds on the games in this guide with step-by-step lessons for focus, impulse control and obedience.</p>
+<div class="cta"><h3>Explore Brain Training For Dogs</h3><p>A guided training system for developing focus, engagement and learning.</p><a href="https://5065ekt-g52o1p0965oj1yv3wg.hop.clickbank.net/" target="_blank" rel="sponsored noopener">Start Training Your Dog</a></div>
+<figure class="figure"><svg viewBox="0 0 420 230" role="img" aria-label="Puppy illustration"><rect width="420" height="230" fill="#fff7e6"/><g fill="#d97706" opacity=".12" transform="translate(40,190) rotate(-20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(90,40) rotate(15)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(300,30) rotate(30)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(375,200) rotate(-10)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(250,205) rotate(20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><ellipse cx="200" cy="205" rx="90" ry="10" fill="#000" opacity=".06"/>
+<g transform="translate(200,125)">
+  <ellipse cx="-44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(20 -44 -6)"/>
+  <ellipse cx="44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(-20 44 -6)"/>
+  <circle r="50" fill="#e8b77a"/>
+  <ellipse cx="-20" cy="-10" rx="17" ry="15" fill="#c98f4f"/>
+  <ellipse cy="22" rx="28" ry="20" fill="#f7e2c2"/>
+  <circle cx="-19" cy="-9" r="7" fill="#1c2b39"/><circle cx="-17" cy="-11" r="2.2" fill="#fff"/>
+  <circle cx="19" cy="-9" r="7" fill="#1c2b39"/><circle cx="21" cy="-11" r="2.2" fill="#fff"/>
+  <ellipse cy="12" rx="9" ry="6.5" fill="#1c2b39"/>
+  <path d="M0 18 v8 M-11 27 q11 9 22 0" stroke="#1c2b39" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M-5 30 q5 12 10 0 z" fill="#f28b82"/>
+</g><g transform="translate(330,150) rotate(-20)" fill="#fff" stroke="#e2c9a0" stroke-width="3"><rect x="-38" y="-9" width="76" height="18" rx="9"/><circle cx="-38" cy="-10" r="12"/><circle cx="-38" cy="10" r="12"/><circle cx="38" cy="-10" r="12"/><circle cx="38" cy="10" r="12"/></g></svg><figcaption>Keep learning together.</figcaption></figure>
+<p class="note">Disclosure: Puppy Panic may earn a commission if you purchase through this link at no extra cost to you. This guide is general information and not a substitute for advice from your vet.</p><div class="footer"><span>PUPPY PANIC</span><span>18</span></div></section>
+<section class="page cover"><div class="brand">PUPPY PANIC</div><h1>Your Puppy Journey<br>Starts Today</h1><p class="subtitle">Every great dog begins with patience, consistency and love.</p><figure class="figure"><svg viewBox="0 0 420 230" role="img" aria-label="Puppy illustration"><rect width="420" height="230" fill="#fff7e6"/><g fill="#d97706" opacity=".12" transform="translate(40,190) rotate(-20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(90,40) rotate(15)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(300,30) rotate(30)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(375,200) rotate(-10)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><g fill="#d97706" opacity=".12" transform="translate(250,205) rotate(20)"><ellipse rx="11" ry="9" cy="8"/><circle cx="-11" cy="-6" r="5"/><circle cx="-4" cy="-13" r="5"/><circle cx="4" cy="-13" r="5"/><circle cx="11" cy="-6" r="5"/></g><ellipse cx="200" cy="205" rx="90" ry="10" fill="#000" opacity=".06"/>
+<g transform="translate(200,125)">
+  <ellipse cx="-44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(20 -44 -6)"/>
+  <ellipse cx="44" cy="-6" rx="20" ry="40" fill="#8b5a2b" transform="rotate(-20 44 -6)"/>
+  <circle r="50" fill="#e8b77a"/>
+  <ellipse cx="-20" cy="-10" rx="17" ry="15" fill="#c98f4f"/>
+  <ellipse cy="22" rx="28" ry="20" fill="#f7e2c2"/>
+  <circle cx="-19" cy="-9" r="7" fill="#1c2b39"/><circle cx="-17" cy="-11" r="2.2" fill="#fff"/>
+  <circle cx="19" cy="-9" r="7" fill="#1c2b39"/><circle cx="21" cy="-11" r="2.2" fill="#fff"/>
+  <ellipse cy="12" rx="9" ry="6.5" fill="#1c2b39"/>
+  <path d="M0 18 v8 M-11 27 q11 9 22 0" stroke="#1c2b39" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M-5 30 q5 12 10 0 z" fill="#f28b82"/>
+</g><g transform="translate(330,70)"><circle r="28" fill="#fde68a"/><circle cx="12" cy="-8" r="24" fill="#fff7e6"/></g><g fill="#d97706"><circle cx="270" cy="45" r="4"/><circle cx="380" cy="120" r="3"/><circle cx="60" cy="60" r="4"/></g></svg></figure></section>
 </div>
 </body>
 </html>
