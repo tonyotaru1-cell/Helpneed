@@ -12,7 +12,7 @@
 #pp-landing{
   --navy:#1C2B39; --navy-2:#24384A; --gold:#D4A537; --gold-deep:#A87A1F;
   --cream:#F7F3E8; --paper:#FFFDF8; --ink:#27303A; --muted:#5D6772; --line:#E7DFCB;
-  --good:#2F7A5B; --bad:#B4483A;
+  --good:#2F7A5B;
   font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   color:var(--ink); background:var(--cream); line-height:1.6; font-size:18px;
   -webkit-font-smoothing:antialiased; overflow-x:clip;
@@ -22,9 +22,13 @@
   font-family:"Fraunces",Georgia,"Times New Roman",serif; color:var(--navy);
   margin:0; line-height:1.12; letter-spacing:-.015em; text-wrap:balance; font-weight:600;
 }
-#pp-landing p{margin:0}
+#pp-landing p{margin:0; color:inherit; font-size:inherit; line-height:inherit}
+#pp-landing li{color:inherit}
+#pp-landing ul{margin-left:0; margin-right:0}
+#pp-landing h1,#pp-landing h2,#pp-landing h3{text-transform:none}
+#pp-landing svg{flex:none}
 #pp-landing img{display:block; max-width:100%; height:auto; border:0}
-#pp-landing a{color:inherit}
+#pp-landing a{color:inherit; text-decoration:none; box-shadow:none}
 #pp-landing .pp-wrap{max-width:1140px; margin:0 auto; padding-inline:20px}
 #pp-landing .pp-sec{padding-block:96px}
 #pp-landing .pp-eyebrow{
@@ -51,7 +55,9 @@
 #pp-landing .pp-top .pp-wrap{display:flex; justify-content:space-between; align-items:center; gap:12px; padding-block:14px; flex-wrap:wrap}
 #pp-landing .pp-logo{font-family:"Fraunces",Georgia,serif; font-weight:700; font-size:22px; letter-spacing:.02em; color:#fff}
 #pp-landing .pp-logo span{color:var(--gold)}
-#pp-landing .pp-top small{font-size:14px; color:#C9D2DB}
+#pp-landing .pp-toplink{font-size:14px; font-weight:700; color:var(--gold); border:1.5px solid var(--gold); border-radius:999px; padding:8px 16px; transition:background .2s,color .2s}
+#pp-landing .pp-toplink:hover{background:var(--gold); color:var(--navy)}
+#pp-landing .pp-toplink:focus-visible{outline:3px solid #fff; outline-offset:2px}
 
 /* Hero */
 #pp-landing .pp-hero{padding-block:72px 96px; background:radial-gradient(1200px 500px at 85% 0%,#FBEFCF 0%,rgba(247,243,232,0) 60%),var(--cream)}
@@ -59,23 +65,24 @@
 #pp-landing .pp-hero h1{font-size:clamp(38px,5.4vw,64px); margin:16px 0 22px}
 #pp-landing .pp-hero h1 em{font-style:italic; color:var(--gold-deep)}
 #pp-landing .pp-lead{font-size:20px; color:var(--muted); max-width:34em; margin-bottom:32px}
-#pp-landing .pp-checks{display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:26px; padding:0; list-style:none; font-size:15px; font-weight:600; color:var(--navy)}
+#pp-landing .pp-checks{display:flex; flex-wrap:wrap; gap:10px 22px; margin:26px 0 0; padding:0; list-style:none; font-size:15px; font-weight:600; color:var(--navy)}
 #pp-landing .pp-checks li{display:flex; align-items:center; gap:8px}
 #pp-landing .pp-checks li::before{content:""; width:18px; height:18px; border-radius:50%; background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%231C2B39' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
 #pp-landing .pp-hero-media{position:relative}
 #pp-landing .pp-hero-media .pp-photo{
-  border-radius:32px; overflow:hidden; aspect-ratio:4/4.3; background:#EADFC6;
+  border-radius:32px; overflow:hidden; background:#EADFC6;
   box-shadow:0 30px 60px rgba(28,43,57,.22);
 }
-#pp-landing .pp-hero-media .pp-photo img{width:100%; height:100%; object-fit:cover}
+#pp-landing .pp-hero-media .pp-photo img{width:100%; height:auto}
+#pp-landing .pp-media-row{display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; margin-top:18px}
 #pp-landing .pp-badge{
-  position:absolute; left:-26px; bottom:34px; background:var(--paper); border-radius:18px;
-  padding:14px 18px; box-shadow:0 16px 36px rgba(28,43,57,.18); display:flex; gap:12px; align-items:center;
+  background:var(--paper); border-radius:18px; border:1px solid var(--line);
+  padding:12px 18px; box-shadow:0 10px 26px rgba(28,43,57,.10); display:flex; gap:12px; align-items:center;
 }
 #pp-landing .pp-badge b{font-family:"Fraunces",Georgia,serif; font-size:30px; color:var(--navy); line-height:1}
 #pp-landing .pp-badge span{font-size:13px; line-height:1.3; color:var(--muted); font-weight:600}
 #pp-landing .pp-tag{
-  position:absolute; right:22px; top:22px; background:var(--navy); color:#fff; font-size:13px;
+  background:var(--navy); color:#fff; font-size:13px;
   font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:8px 14px; border-radius:999px;
 }
 
@@ -131,13 +138,14 @@
 #pp-landing .pp-rule b{color:var(--navy)}
 
 /* Roadmap */
-#pp-landing .pp-weeks{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; counter-reset:wk}
+#pp-landing .pp-weeks{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
 #pp-landing .pp-week{background:var(--paper); border:1px solid var(--line); border-radius:22px; padding:26px 24px; position:relative}
 #pp-landing .pp-week .pp-num{font-family:"Fraunces",Georgia,serif; font-size:15px; font-weight:700; color:var(--gold-deep); letter-spacing:.08em; text-transform:uppercase}
 #pp-landing .pp-week h3{font-size:22px; margin:6px 0 12px}
 #pp-landing .pp-week ul{margin:0; padding-left:18px; font-size:15px; color:var(--muted); display:grid; gap:6px}
 
 /* Get the guide */
+#pp-landing #pp-get{scroll-margin-top:90px}
 #pp-landing .pp-get .pp-wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center}
 #pp-landing .pp-get h2{font-size:clamp(32px,4.4vw,50px); margin:14px 0 18px}
 #pp-landing .pp-get .pp-list{list-style:none; padding:0; margin:26px 0 0; display:grid; gap:12px}
@@ -148,7 +156,6 @@
 #pp-landing .pp-card .pp-btn{width:100%; justify-content:center}
 #pp-landing .pp-card .pp-fine{font-size:14px; color:var(--muted); margin-top:14px}
 #pp-landing .pp-price{font-size:15px; color:var(--muted); margin-bottom:16px}
-#pp-landing .pp-price s{color:#9AA3AC}
 #pp-landing .pp-price b{color:var(--good); font-size:18px}
 
 /* FAQ */
@@ -182,7 +189,6 @@
   #pp-landing .pp-hero .pp-wrap,#pp-landing .pp-inside .pp-wrap,#pp-landing .pp-get .pp-wrap,#pp-landing .pp-next-box{grid-template-columns:1fr}
   #pp-landing .pp-grid4,#pp-landing .pp-weeks{grid-template-columns:1fr 1fr}
   #pp-landing .pp-times{grid-template-columns:1fr 1fr}
-  #pp-landing .pp-badge{left:14px}
   #pp-landing .pp-next-box{padding:40px 28px}
 }
 @media (max-width:600px){
@@ -194,7 +200,7 @@
   #pp-landing .pp-row .pp-arrow{display:none}
   #pp-landing .pp-page-in{padding:28px 22px}
   #pp-landing .pp-btn{width:100%; justify-content:center; padding:18px 22px}
-  #pp-landing .pp-top small{display:none}
+  #pp-landing .pp-toplink{font-size:13px; padding:7px 12px}
 }
 @media (prefers-reduced-motion:reduce){
   #pp-landing *{transition:none!important}
@@ -207,7 +213,7 @@
   <div class="pp-top">
     <div class="pp-wrap">
       <div class="pp-logo">Puppy <span>Panic</span></div>
-      <small>Free guide for new puppy owners</small>
+      <a class="pp-toplink" href="#pp-get">Free guide for new puppy owners &rarr;</a>
     </div>
   </div>
 
@@ -219,7 +225,7 @@
         <h1>Bring home a puppy. <em>Keep your sanity.</em></h1>
         <p class="pp-lead">The first weeks with a new puppy are wonderful and exhausting. The Puppy Panic Survival Guide shows you exactly what to do about the biting, the night crying, the accidents and the chewing, one simple step at a time.</p>
         <a class="pp-btn" href="#pp-get">Get My Free Puppy Guide
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
         </a>
         <ul class="pp-checks">
           <li>Instant PDF download</li>
@@ -229,10 +235,12 @@
       </div>
       <div class="pp-hero-media">
         <div class="pp-photo">
-          <img src="https://puppypanic.com/wp-content/uploads/2026/09/hero-puppy-owner-scaled.jpg" alt="A new puppy owner cuddling their puppy at home" width="1200" height="1290" fetchpriority="high">
+          <img src="https://puppypanic.com/wp-content/uploads/2026/09/hero-puppy-owner-scaled.jpg" alt="A new puppy owner cuddling their puppy at home" fetchpriority="high">
         </div>
-        <div class="pp-tag">Free PDF</div>
-        <div class="pp-badge"><b>16</b><span>chapters for your<br>first 30 days</span></div>
+        <div class="pp-media-row">
+          <div class="pp-badge"><b>16</b><span>chapters for your<br>first 30 days</span></div>
+          <div class="pp-tag">Free PDF</div>
+        </div>
       </div>
     </div>
   </section>
@@ -247,22 +255,22 @@
       </div>
       <div class="pp-grid4">
         <div class="pp-prob">
-          <div class="pp-ico"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></div>
+          <div class="pp-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></div>
           <h3>Crying all night</h3>
           <p>A settling routine and where to put the crate so everyone sleeps again.</p>
         </div>
         <div class="pp-prob">
-          <div class="pp-ico"><svg viewBox="0 0 24 24"><path d="M4 9c0-3 2.5-5 8-5s8 2 8 5v2c0 4-3 9-8 9s-8-5-8-9z"/><path d="M8 11l1.5 2 1.5-2 1 2 1.5-2 1.5 2 1-2"/></svg></div>
+          <div class="pp-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9c0-3 2.5-5 8-5s8 2 8 5v2c0 4-3 9-8 9s-8-5-8-9z"/><path d="M8 11l1.5 2 1.5-2 1 2 1.5-2 1.5 2 1-2"/></svg></div>
           <h3>Biting hands</h3>
           <p>Why puppies bite, and how to redirect those sharp teeth without punishment.</p>
         </div>
         <div class="pp-prob">
-          <div class="pp-ico"><svg viewBox="0 0 24 24"><path d="M7.5 16.5l9-9"/><circle cx="5.5" cy="16" r="2"/><circle cx="8" cy="18.5" r="2"/><circle cx="16" cy="5.5" r="2"/><circle cx="18.5" cy="8" r="2"/></svg></div>
+          <div class="pp-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7.5 16.5l9-9"/><circle cx="5.5" cy="16" r="2"/><circle cx="8" cy="18.5" r="2"/><circle cx="16" cy="5.5" r="2"/><circle cx="18.5" cy="8" r="2"/></svg></div>
           <h3>Chewing everything</h3>
           <p>A room-by-room puppy-proofing plan and the right chew toys for teething.</p>
         </div>
         <div class="pp-prob">
-          <div class="pp-ico"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div>
+          <div class="pp-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div>
           <h3>Accidents indoors</h3>
           <p>The toilet timing that makes house training click in weeks, not months.</p>
         </div>
@@ -396,7 +404,7 @@
              Replace the <a> button below with your MailerLite / ConvertKit / WPForms embed code,
              then set that form's "thank you" redirect to the PDF link in the button. -->
         <a class="pp-btn" href="https://puppypanic.com/wp-content/uploads/2026/09/Puppy-Panic-New-Puppy-Owner-Survival-Guide.pdf" target="_blank" rel="noopener">Download The Free Guide
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5L10 13l4.5-4.5M4 17h12"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5L10 13l4.5-4.5M4 17h12"/></svg>
         </a>
         <p class="pp-fine">PDF &middot; 19 pages &middot; opens in a new tab</p>
       </div>
