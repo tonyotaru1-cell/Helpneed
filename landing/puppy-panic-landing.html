@@ -1,7 +1,7 @@
 <!-- ============================================================
      PUPPY PANIC - Free Guide Landing Page
      Paste everything in this file into a WordPress "Custom HTML" block.
-     Tip: use a full-width / blank page template so the sections run edge to edge.
+     The page fills the whole browser window and covers the theme layout, so it looks the same on any theme.
      All styles are scoped to #pp-landing so they will not affect the rest of your site.
      ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,12 @@
   --good:#2F7A5B;
   font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   color:var(--ink); background:var(--cream); line-height:1.6; font-size:18px;
-  -webkit-font-smoothing:antialiased; overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+  /* Full-screen page: sits above the theme layout so no theme column,
+     sidebar or boxed container can leave white space around it. */
+  position:fixed; top:var(--wp-admin--admin-bar--height,0px); left:0; right:0; bottom:0;
+  width:auto !important; max-width:none !important; margin:0 !important;
+  overflow-y:auto; overflow-x:hidden; z-index:99990; -webkit-overflow-scrolling:touch;
 }
 #pp-landing *{box-sizing:border-box}
 #pp-landing h1,#pp-landing h2,#pp-landing h3{
@@ -145,7 +150,7 @@
 #pp-landing .pp-week ul{margin:0; padding-left:18px; font-size:15px; color:var(--muted); display:grid; gap:6px}
 
 /* Get the guide */
-#pp-landing #pp-get{scroll-margin-top:90px}
+#pp-landing #pp-get{scroll-margin-top:0}
 #pp-landing .pp-get .pp-wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center}
 #pp-landing .pp-get h2{font-size:clamp(32px,4.4vw,50px); margin:14px 0 18px}
 #pp-landing .pp-get .pp-list{list-style:none; padding:0; margin:26px 0 0; display:grid; gap:12px}
@@ -477,23 +482,3 @@
   </footer>
 
 </div>
-
-<script>
-/* Stretch the landing page to the full browser width, even when the theme
-   puts it inside a narrower content column or next to an empty sidebar. */
-(function () {
-  var el = document.getElementById('pp-landing');
-  if (!el) return;
-  function fit() {
-    el.style.marginLeft = '0';
-    el.style.width = '';
-    var left = el.getBoundingClientRect().left;
-    el.style.maxWidth = 'none';
-    el.style.width = document.documentElement.clientWidth + 'px';
-    el.style.marginLeft = (-left) + 'px';
-  }
-  fit();
-  window.addEventListener('resize', fit);
-  window.addEventListener('load', fit);
-})();
-</script>
