@@ -89,7 +89,11 @@
 #pp-landing .pp-tag{
   background:var(--navy); color:#fff; font-size:13px;
   font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:8px 14px; border-radius:999px;
+  transition:background .2s,color .2s;
 }
+#pp-landing a.pp-tag{color:#fff}
+#pp-landing a.pp-tag:hover{background:var(--gold); color:var(--navy)}
+#pp-landing a.pp-tag:focus-visible{outline:3px solid var(--navy); outline-offset:2px}
 
 /* Problems */
 #pp-landing .pp-problems{background:var(--paper)}
@@ -244,7 +248,7 @@
         </div>
         <div class="pp-media-row">
           <div class="pp-badge"><b>16</b><span>chapters for your<br>first 30 days</span></div>
-          <div class="pp-tag">Free PDF</div>
+          <a class="pp-tag" href="https://puppypanic.com/wp-content/uploads/2026/09/Puppy-Panic-New-Puppy-Owner-Survival-Guide.pdf" target="_blank" rel="noopener">Free PDF &darr;</a>
         </div>
       </div>
     </div>
