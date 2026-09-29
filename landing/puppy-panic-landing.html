@@ -477,3 +477,23 @@
   </footer>
 
 </div>
+
+<script>
+/* Stretch the landing page to the full browser width, even when the theme
+   puts it inside a narrower content column or next to an empty sidebar. */
+(function () {
+  var el = document.getElementById('pp-landing');
+  if (!el) return;
+  function fit() {
+    el.style.marginLeft = '0';
+    el.style.width = '';
+    var left = el.getBoundingClientRect().left;
+    el.style.maxWidth = 'none';
+    el.style.width = document.documentElement.clientWidth + 'px';
+    el.style.marginLeft = (-left) + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+})();
+</script>
