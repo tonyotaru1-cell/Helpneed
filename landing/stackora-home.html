@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  try {
+    var t = localStorage.getItem('tsl-theme');
+    window.__tslInitialTheme = (t === 'dark' || t === 'light') ? t : null;
+  } catch (e) { window.__tslInitialTheme = null; }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Stackora | Shopify, Local SEO, and AI Automation, Tested First</title>
+<meta name="description" content="Field-tested guides on launching Shopify stores, ranking on Google Maps with local SEO, and saving hours with AI automation. Every guide is tested before it is published.">
+<style>
+  .tsl-page {
+    --tsl-paper: #efe6d3;
+    --tsl-paper-alt: #e4d8bd;
+    --tsl-paper-alt-2: #ded1b3;
+    --tsl-ink: #241c14;
+    --tsl-ink-soft: #55483a;
+    --tsl-ink-faint: #7c6c58;
+    --tsl-rule: #c7b899;
+    --tsl-stamp: #a23b2b;
+    --tsl-stamp-dark: #7c2c1f;
+    --tsl-stamp-tint: rgba(162, 59, 43, 0.1);
+    --tsl-star: #8a6a2f;
+    --tsl-card-shopify: #4a5a3e;
+    --tsl-card-shopify-tint: rgba(74, 90, 62, 0.14);
+    --tsl-card-local: #2f5a63;
+    --tsl-card-local-tint: rgba(47, 90, 99, 0.14);
+    --tsl-card-ai: #6a3f5e;
+    --tsl-card-ai-tint: rgba(106, 63, 94, 0.14);
+    --tsl-card-logo: #3d4f7a;
+    --tsl-card-logo-tint: rgba(61, 79, 122, 0.14);
+    --tsl-focus: #1b6fa8;
+    --tsl-shadow: rgba(36, 28, 20, 0.16);
+    --tsl-font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --tsl-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --tsl-font-mono: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color-scheme: light;
+    display: block;
+  }
+
+  .tsl-page[data-theme="dark"] {
+    --tsl-paper: #1b1712;
+    --tsl-paper-alt: #241e17;
+    --tsl-paper-alt-2: #2c251c;
+    --tsl-ink: #ede3ce;
+    --tsl-ink-soft: #beb096;
+    --tsl-ink-faint: #8d8065;
+    --tsl-rule: #3c3325;
+    --tsl-stamp: #dd7050;
+    --tsl-stamp-dark: #b5462f;
+    --tsl-stamp-tint: rgba(221, 112, 80, 0.14);
+    --tsl-star: #cba431;
+    --tsl-card-shopify: #85a56c;
+    --tsl-card-shopify-tint: rgba(133, 165, 108, 0.16);
+    --tsl-card-local: #6fb0bb;
+    --tsl-card-local-tint: rgba(111, 176, 187, 0.16);
+    --tsl-card-ai: #c087ac;
+    --tsl-card-ai-tint: rgba(192, 135, 172, 0.16);
+    --tsl-card-logo: #8fa3d6;
+    --tsl-card-logo-tint: rgba(143, 163, 214, 0.16);
+    --tsl-focus: #6fb3e0;
+    --tsl-shadow: rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .tsl-page:not([data-theme="light"]):not([data-theme="dark"]) {
+      --tsl-paper: #1b1712;
+      --tsl-paper-alt: #241e17;
+      --tsl-paper-alt-2: #2c251c;
+      --tsl-ink: #ede3ce;
+      --tsl-ink-soft: #beb096;
+      --tsl-ink-faint: #8d8065;
+      --tsl-rule: #3c3325;
+      --tsl-stamp: #dd7050;
+      --tsl-stamp-dark: #b5462f;
+      --tsl-stamp-tint: rgba(221, 112, 80, 0.14);
+      --tsl-star: #cba431;
+      --tsl-card-shopify: #85a56c;
+      --tsl-card-shopify-tint: rgba(133, 165, 108, 0.16);
+      --tsl-card-local: #6fb0bb;
+      --tsl-card-local-tint: rgba(111, 176, 187, 0.16);
+      --tsl-card-ai: #c087ac;
+      --tsl-card-ai-tint: rgba(192, 135, 172, 0.16);
+      --tsl-card-logo: #8fa3d6;
+      --tsl-card-logo-tint: rgba(143, 163, 214, 0.16);
+      --tsl-focus: #6fb3e0;
+      --tsl-shadow: rgba(0, 0, 0, 0.5);
+      color-scheme: dark;
+    }
+  }
+
+  .tsl-page, .tsl-page * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .tsl-page, .tsl-page * {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  .tsl-page {
+    margin: 0;
+    background: var(--tsl-paper);
+    color: var(--tsl-ink);
+    font-family: var(--tsl-font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .tsl-page img, .tsl-page svg { max-width: 100%; display: block; }
+
+  .tsl-page a { color: inherit; }
+
+  .tsl-skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    background: var(--tsl-ink);
+    color: var(--tsl-paper);
+    padding: 0.75rem 1.25rem;
+    z-index: 1000;
+    border-radius: 3px;
+    font-family: var(--tsl-font-body);
+  }
+  .tsl-skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  .tsl-page :focus-visible {
+    outline: 3px solid var(--tsl-focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .tsl-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ---------- Hero utility bar ---------- */
+
+  .tsl-hero-utility {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1.25rem 0;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid var(--tsl-rule);
+  }
+
+  .tsl-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--tsl-rule);
+    border-radius: 4px;
+    background: var(--tsl-paper-alt);
+    color: var(--tsl-ink);
+    font-size: 0.88rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--tsl-font-body);
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .tsl-icon-btn:hover,
+  .tsl-icon-btn:focus-visible {
+    background: var(--tsl-paper-alt-2);
+    border-color: var(--tsl-ink-faint);
+    color: var(--tsl-ink);
+  }
+  .tsl-icon-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    fill: currentColor;
+    stroke: currentColor;
+  }
+
+  @media (max-width: 560px) {
+    .tsl-icon-btn .tsl-btn-label { display: none; }
+  }
+
+  .tsl-wordmark {
+    font-family: var(--tsl-font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--tsl-ink);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .tsl-wordmark span {
+    color: var(--tsl-stamp);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .tsl-hero {
+    padding: 4rem 0 4.5rem;
+    border-bottom: 1px solid var(--tsl-rule);
+  }
+
+  .tsl-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .tsl-kicker {
+    font-family: var(--tsl-font-mono);
+    font-size: 0.85rem;
+    color: var(--tsl-ink-faint);
+    margin: 0 0 1rem;
+    font-style: italic;
+  }
+
+  .tsl-hero-headline {
+    font-family: var(--tsl-font-display);
+    font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+    line-height: 1.14;
+    margin: 0 0 1.25rem;
+    max-width: 15ch;
+  }
+
+  .tsl-hero-sub {
+    font-size: 1.1rem;
+    color: var(--tsl-ink-soft);
+    max-width: 52ch;
+    margin: 0 0 2rem;
+  }
+
+  .tsl-btn-primary {
+    display: inline-block;
+    background: var(--tsl-stamp);
+    color: #fbf3e6;
+    text-decoration: none;
+    padding: 0.9rem 1.7rem;
+    border-radius: 3px;
+    font-size: 1.02rem;
+    font-weight: 600;
+    border: 1px solid var(--tsl-stamp-dark);
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .tsl-btn-primary:hover { background: var(--tsl-stamp-dark); color: #fbf3e6; }
+  .tsl-btn-primary:active { transform: translateY(1px); }
+
+  /* Receipt / ledger card */
+
+  .tsl-receipt-wrap {
+    position: relative;
+    padding: 1.75rem 0;
+  }
+
+  .tsl-receipt {
+    background: var(--tsl-paper-alt);
+    border: 1px solid var(--tsl-rule);
+    padding: 1.75rem 1.75rem 1.5rem;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 14px 30px -12px var(--tsl-shadow);
+    font-family: var(--tsl-font-mono);
+    position: relative;
+  }
+
+  .tsl-receipt::before,
+  .tsl-receipt::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background-image: radial-gradient(circle at 10px 6px, var(--tsl-paper) 6px, transparent 6.5px);
+    background-size: 20px 12px;
+    background-repeat: repeat-x;
+  }
+  .tsl-receipt::before { top: -6px; }
+  .tsl-receipt::after { bottom: -6px; transform: scaleY(-1); }
+
+  .tsl-receipt-title {
+    font-family: var(--tsl-font-display);
+    font-size: 1.05rem;
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 1rem;
+    color: var(--tsl-ink);
+    border-bottom: 1px dashed var(--tsl-ink-faint);
+    padding-bottom: 0.9rem;
+  }
+
+  .tsl-receipt-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.86rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted var(--tsl-rule);
+    color: var(--tsl-ink-soft);
+  }
+  .tsl-receipt-row:last-of-type { border-bottom: none; }
+  .tsl-receipt-row strong {
+    color: var(--tsl-ink);
+    text-align: right;
+    font-weight: 700;
+  }
+
+  .tsl-stamp {
+    display: inline-block;
+    margin-top: 1.5rem;
+    border: 3px double var(--tsl-stamp);
+    color: var(--tsl-stamp);
+    padding: 0.5rem 1rem;
+    font-family: var(--tsl-font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transform: rotate(-7deg);
+    border-radius: 3px;
+  }
+
+  /* ---------- Three rules ---------- */
+
+  .tsl-rules {
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--tsl-rule);
+  }
+
+  .tsl-section-head {
+    max-width: 62ch;
+    margin: 0 0 2.75rem;
+  }
+
+  .tsl-section-title {
+    font-family: var(--tsl-font-display);
+    font-size: clamp(1.6rem, 2.8vw, 2.15rem);
+    margin: 0 0 0.6rem;
+    line-height: 1.25;
+  }
+
+  .tsl-section-lede {
+    color: var(--tsl-ink-soft);
+    font-size: 1.02rem;
+    margin: 0;
+  }
+
+  .tsl-rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .tsl-rule {
+    border-top: 3px solid var(--tsl-stamp);
+    padding-top: 1.1rem;
+  }
+
+  .tsl-rule-num {
+    font-family: var(--tsl-font-mono);
+    color: var(--tsl-ink-faint);
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .tsl-rule-title {
+    font-family: var(--tsl-font-display);
+    font-size: 1.25rem;
+    margin: 0 0 0.6rem;
+  }
+
+  .tsl-rule p {
+    color: var(--tsl-ink-soft);
+    margin: 0;
+    font-size: 0.98rem;
+  }
+
+  /* ---------- Directory ---------- */
+
+  .tsl-directory {
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--tsl-rule);
+    scroll-margin-top: 84px;
+  }
+
+  .tsl-tablist {
+    display: flex;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--tsl-rule);
+    margin-bottom: 2.25rem;
+    flex-wrap: wrap;
+  }
+
+  .tsl-tab {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 0 0 0.85rem;
+    font-family: var(--tsl-font-body);
+    font-size: 1rem;
+    color: var(--tsl-ink-soft);
+    cursor: pointer;
+    margin-bottom: -1px;
+  }
+  .tsl-tab[aria-selected="true"] {
+    color: var(--tsl-ink);
+    border-bottom-color: var(--tsl-stamp);
+    font-weight: 600;
+  }
+  .tsl-tab:hover { color: var(--tsl-ink); }
+
+  .tsl-directory-status {
+    font-size: 0.9rem;
+    color: var(--tsl-ink-faint);
+    margin: -1.5rem 0 1.75rem;
+  }
+
+  .tsl-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tsl-card {
+    background: var(--tsl-paper-alt);
+    border: 1px solid var(--tsl-rule);
+    border-left: 4px solid var(--tsl-cat-color, var(--tsl-stamp));
+    padding: 1.4rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .tsl-card-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.74rem;
+    font-family: var(--tsl-font-mono);
+    color: var(--tsl-cat-color, var(--tsl-stamp));
+    border: 1px solid var(--tsl-cat-color, var(--tsl-stamp));
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    background: var(--tsl-cat-tint, var(--tsl-stamp-tint));
+  }
+
+  .tsl-card-title {
+    font-family: var(--tsl-font-display);
+    font-size: 1.15rem;
+    margin: 0.2rem 0 0;
+    line-height: 1.3;
+  }
+
+  .tsl-card-result {
+    color: var(--tsl-ink-soft);
+    font-size: 0.94rem;
+    margin: 0;
+  }
+
+  .tsl-card-stars {
+    font-size: 0.9rem;
+    color: var(--tsl-star);
+    letter-spacing: 0.05em;
+  }
+  .tsl-card-stars .tsl-num {
+    color: var(--tsl-ink-faint);
+    font-family: var(--tsl-font-mono);
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  .tsl-card-link {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    text-decoration-color: var(--tsl-rule);
+    text-underline-offset: 3px;
+    align-self: flex-start;
+  }
+  .tsl-card-link:hover { text-decoration-color: var(--tsl-ink); }
+
+  /* ---------- Story ---------- */
+
+  .tsl-story {
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--tsl-rule);
+    background: var(--tsl-paper-alt);
+  }
+
+  .tsl-story-inner {
+    max-width: 68ch;
+    margin: 0 auto;
+  }
+
+  .tsl-story-inner p {
+    font-size: 1.08rem;
+    color: var(--tsl-ink-soft);
+    margin: 0 0 1.2rem;
+  }
+  .tsl-story-inner p:first-of-type::first-letter {
+    font-family: var(--tsl-font-display);
+    font-size: 3.1rem;
+    float: left;
+    line-height: 0.85;
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+    color: var(--tsl-stamp);
+  }
+
+  .tsl-story-sign {
+    font-family: var(--tsl-font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--tsl-ink);
+    margin-top: 1.75rem;
+  }
+
+  /* ---------- Stats ---------- */
+
+  .tsl-stats {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--tsl-rule);
+  }
+
+  .tsl-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tsl-stat {
+    text-align: left;
+    border-top: 1px solid var(--tsl-rule);
+    padding-top: 1rem;
+  }
+
+  .tsl-stat-num {
+    font-family: var(--tsl-font-display);
+    font-size: clamp(2rem, 3.4vw, 2.6rem);
+    color: var(--tsl-stamp);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .tsl-stat-label {
+    color: var(--tsl-ink-soft);
+    font-size: 0.94rem;
+  }
+
+  /* ---------- Trust note ---------- */
+
+  .tsl-trust {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--tsl-rule);
+  }
+
+  .tsl-trust-box {
+    border: 1px dashed var(--tsl-ink-faint);
+    padding: 1.75rem 2rem;
+    max-width: 68ch;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--tsl-font-display);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--tsl-ink);
+  }
+
+  /* ---------- Footer ---------- */
+
+  .tsl-site-foot {
+    background: #16130f;
+    color: #ddd1b8;
+    padding: 3.5rem 0 2rem;
+  }
+
+  .tsl-foot-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #362f24;
+  }
+
+  .tsl-site-foot .tsl-wordmark { color: #ddd1b8; }
+  .tsl-site-foot .tsl-wordmark span { color: var(--tsl-stamp); }
+
+  .tsl-foot-desc {
+    font-size: 0.92rem;
+    color: #a99a7d;
+    max-width: 38ch;
+    margin: 1rem 0 0;
+  }
+
+  .tsl-foot-heading {
+    font-size: 0.85rem;
+    color: #ddd1b8;
+    margin: 0 0 1rem;
+    font-weight: 600;
+  }
+
+  .tsl-site-foot form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tsl-site-foot input[type="email"] {
+    flex: 1;
+    min-width: 180px;
+    padding: 0.7rem 0.9rem;
+    border-radius: 3px;
+    border: 1px solid #4a4130;
+    background: #211c15;
+    color: #ede3ce;
+    font-family: var(--tsl-font-body);
+    font-size: 0.95rem;
+  }
+  .tsl-site-foot input[type="email"]::placeholder { color: #7c7256; }
+
+  .tsl-site-foot .tsl-btn-primary {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .tsl-foot-note {
+    font-size: 0.85rem;
+    color: #a99a7d;
+    margin-top: 0.75rem;
+  }
+
+  .tsl-foot-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tsl-foot-links li { margin-bottom: 0.65rem; }
+  .tsl-foot-links a {
+    color: #ddd1b8;
+    text-decoration: none;
+    font-size: 0.94rem;
+  }
+  .tsl-foot-links a:hover { text-decoration: underline; }
+
+  .tsl-foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.75rem;
+    font-size: 0.82rem;
+    color: #8a7c60;
+  }
+  .tsl-foot-bottom a { color: #a99a7d; text-decoration: underline; }
+
+  .tsl-sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 900px) {
+    .tsl-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .tsl-rules-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .tsl-card-grid { grid-template-columns: repeat(2, 1fr); }
+    .tsl-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .tsl-foot-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 560px) {
+    .tsl-card-grid { grid-template-columns: 1fr; }
+    .tsl-stats-grid { grid-template-columns: 1fr 1fr; }
+    .tsl-hero, .tsl-rules, .tsl-directory, .tsl-story, .tsl-stats, .tsl-trust {
+      padding: 3rem 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="tsl-page" id="tsl-page">
+
+<a class="tsl-skip-link" href="#tsl-main">Skip to content</a>
+
+<main id="tsl-main">
+
+  <section class="tsl-hero" id="tsl-top">
+    <div class="tsl-wrap">
+      <div class="tsl-hero-utility">
+        <a class="tsl-icon-btn" href="https://fi.pinterest.com/shopifyseoai" target="_blank" rel="noopener noreferrer" aria-label="Follow The Stackora on Pinterest">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.36 2 11.74c0 4.12 2.63 7.63 6.3 9.02-.09-.77-.16-1.94.04-2.78.18-.76 1.16-4.85 1.16-4.85s-.3-.59-.3-1.46c0-1.37.8-2.39 1.8-2.39.85 0 1.26.63 1.26 1.38 0 .84-.54 2.11-.82 3.28-.23.98.5 1.78 1.48 1.78 1.78 0 3.15-1.86 3.15-4.53 0-2.37-1.72-4.03-4.17-4.03-2.84 0-4.51 2.09-4.51 4.25 0 .84.33 1.74.73 2.23.08.1.09.18.07.28-.08.31-.25 1-.28 1.14-.05.18-.15.22-.34.13-1.27-.58-2.06-2.4-2.06-3.86 0-3.14 2.31-6.02 6.65-6.02 3.49 0 6.21 2.44 6.21 5.71 0 3.41-2.17 6.15-5.18 6.15-1.01 0-1.96-.52-2.28-1.13l-.62 2.34c-.22.85-.83 1.9-1.24 2.55.94.28 1.93.43 2.96.43 5.52 0 10-4.36 10-9.74C22 6.36 17.52 2 12 2z"></path></svg>
+          <span class="tsl-btn-label">Pinterest</span>
+        </a>
+        <button class="tsl-icon-btn" id="tsl-theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">
+          <svg id="tsl-theme-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+          <span class="tsl-btn-label" id="tsl-theme-label">Dark</span>
+        </button>
+      </div>
+      <div class="tsl-hero-grid">
+        <div>
+          <p class="tsl-kicker">Field notes, not theory.</p>
+          <h1 class="tsl-hero-headline">Shopify, Local SEO, And AI Automation, Tested Before I Teach It.</h1>
+          <p class="tsl-hero-sub">I run the store, chase the Map Pack ranking, and build the automation myself before I write a single word about it. Three pillars, one habit: try it, measure it, then decide if it earns a place on this shelf.</p>
+          <a class="tsl-btn-primary" href="#tsl-directory">See What I've Tested</a>
+        </div>
+        <div class="tsl-receipt-wrap">
+          <div class="tsl-receipt" role="img" aria-label="Ledger receipt showing 214 guides published, 96 tools tested, 12 hours saved per week, monetized through affiliate links and paid guides, stamped Personally Tested">
+            <p class="tsl-receipt-title">The Stackora Ledger, Live Count</p>
+            <div class="tsl-receipt-row"><span>Guides published</span><strong>214</strong></div>
+            <div class="tsl-receipt-row"><span>Tools tested</span><strong>96</strong></div>
+            <div class="tsl-receipt-row"><span>Hours saved / week</span><strong>12</strong></div>
+            <div class="tsl-receipt-row"><span>Monetization</span><strong>Affiliate + paid guides</strong></div>
+            <span class="tsl-stamp">Personally Tested</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsl-rules">
+    <div class="tsl-wrap">
+      <div class="tsl-section-head">
+        <h2 class="tsl-section-title">The Three Rules Behind Every Guide</h2>
+        <p class="tsl-section-lede">Nothing gets published here until it survives contact with a real store, a real profile, or a real inbox.</p>
+      </div>
+      <div class="tsl-rules-grid">
+        <div class="tsl-rule">
+          <span class="tsl-rule-num">01</span>
+          <h3 class="tsl-rule-title">I test it before I write it</h3>
+          <p>Every tool and tactic runs on a real Shopify store, a real Google Business Profile, or a real workflow before it gets a page on this site.</p>
+        </div>
+        <div class="tsl-rule">
+          <span class="tsl-rule-num">02</span>
+          <h3 class="tsl-rule-title">I publish the actual number</h3>
+          <p>Traffic, ranking position, dollars, hours saved. If a result can't be measured, it doesn't make the guide, no matter how good the pitch sounded.</p>
+        </div>
+        <div class="tsl-rule">
+          <span class="tsl-rule-num">03</span>
+          <h3 class="tsl-rule-title">I remove what stops working</h3>
+          <p>Recommendations get rechecked on a schedule. Tools that quietly decline get pulled, even the ones that used to earn a spot here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsl-directory" id="tsl-directory">
+    <div class="tsl-wrap">
+      <div class="tsl-section-head">
+        <h2 class="tsl-section-title">Start Here: 33 Guides Across Four Pillars</h2>
+        <p class="tsl-section-lede">Pulled from the boards I actually pin to. Filter by pillar or scroll the whole shelf.</p>
+      </div>
+
+      <div class="tsl-tablist" role="tablist" aria-label="Filter guides by category" id="tsl-tablist">
+        <button class="tsl-tab" role="tab" id="tsl-tab-all" aria-controls="tsl-card-grid" aria-selected="true" data-filter="all">All Guides</button>
+        <button class="tsl-tab" role="tab" id="tsl-tab-shopify" aria-controls="tsl-card-grid" aria-selected="false" data-filter="shopify" tabindex="-1">Shopify</button>
+        <button class="tsl-tab" role="tab" id="tsl-tab-local-seo" aria-controls="tsl-card-grid" aria-selected="false" data-filter="local-seo" tabindex="-1">Local SEO</button>
+        <button class="tsl-tab" role="tab" id="tsl-tab-ai-automation" aria-controls="tsl-card-grid" aria-selected="false" data-filter="ai-automation" tabindex="-1">AI Automation</button>
+        <button class="tsl-tab" role="tab" id="tsl-tab-logo-design" aria-controls="tsl-card-grid" aria-selected="false" data-filter="logo-design" tabindex="-1">Logo Design</button>
+      </div>
+
+      <p class="tsl-directory-status" id="tsl-directory-status" aria-live="polite">Showing 33 of 33 guides.</p>
+
+      <div class="tsl-card-grid" id="tsl-card-grid" role="tabpanel" aria-label="Guide directory"></div>
+    </div>
+  </section>
+
+  <section class="tsl-story">
+    <div class="tsl-wrap tsl-story-inner">
+      <h2 class="tsl-section-title">Why I Document Instead Of Guess</h2>
+      <p>I paid an agency three thousand dollars to "optimize" my first store. Six weeks later, traffic was flat and my inbox had a lot of screenshots of dashboards that meant nothing. I paid for two more tools after that, both cancelled within a month, both useless for what I actually needed.</p>
+      <p>What finally worked came from doing the boring parts myself. Setting up the Google Business Profile by hand. Reading the actual Shopify analytics instead of a summary someone else wrote. Testing one AI workflow at a time instead of buying a bundle of twelve I'd never open.</p>
+      <p>Once something worked, I wrote down exactly what I did and what it changed. That habit turned into this site. I am not selling a shortcut. I am showing you the notes so you don't have to pay the agency I paid, or waste the month I wasted, to learn the same lesson.</p>
+      <p class="tsl-story-sign">Test first, then teach it. That's the whole method.<br>, Femi</p>
+    </div>
+  </section>
+
+  <section class="tsl-stats">
+    <div class="tsl-wrap">
+      <div class="tsl-section-head">
+        <h2 class="tsl-section-title">The Numbers Behind The Ledger</h2>
+      </div>
+      <div class="tsl-stats-grid">
+        <div class="tsl-stat">
+          <span class="tsl-stat-num">340%</span>
+          <span class="tsl-stat-label">Traffic increase after the site redesign</span>
+        </div>
+        <div class="tsl-stat">
+          <span class="tsl-stat-num">2.1M</span>
+          <span class="tsl-stat-label">Monthly Pinterest viewers across my boards</span>
+        </div>
+        <div class="tsl-stat">
+          <span class="tsl-stat-num">23%</span>
+          <span class="tsl-stat-label">Reply rate on my cold email sequence</span>
+        </div>
+        <div class="tsl-stat">
+          <span class="tsl-stat-num">12 hrs</span>
+          <span class="tsl-stat-label">Saved weekly once automation replaced manual tasks</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsl-trust">
+    <div class="tsl-wrap">
+      <p class="tsl-trust-box">I only recommend what I have personally tested and paid for. Anything that stops performing gets removed.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="tsl-site-foot">
+  <div class="tsl-wrap tsl-foot-grid">
+    <div>
+      <a class="tsl-wordmark" href="#tsl-top">The <span>Stackora</span></a>
+      <p class="tsl-foot-desc">Field notes on Shopify, local SEO, and AI automation, written by someone who tests it before teaching it.</p>
+      <p class="tsl-foot-note">Some links on this site are affiliate links. I earn a commission if you buy through them, at no extra cost to you. Read the full <a href="/affiliate-disclosure">affiliate disclosure</a>.</p>
+    </div>
+    <div>
+      <h3 class="tsl-foot-heading">Get the next field test</h3>
+      <form id="tsl-footer-form">
+        <label class="tsl-sr-only" for="tsl-footer-email">Email address</label>
+        <input type="email" id="tsl-footer-email" name="email" placeholder="you@yourstore.com" required>
+        <button class="tsl-btn-primary" type="submit">Send it to my inbox</button>
+      </form>
+      <p class="tsl-foot-note">Opens your mail app. No spam, no daily emails, just the tested stuff.</p>
+    </div>
+    <div>
+      <h3 class="tsl-foot-heading">Elsewhere</h3>
+      <ul class="tsl-foot-links">
+        <li><a href="https://fi.pinterest.com/shopifyseoai" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="tsl-wrap tsl-foot-bottom">
+    <span>&copy; <span id="tsl-year"></span> The Stackora. All rights reserved.</span>
+    <span><a href="/affiliate-disclosure">Affiliate Disclosure</a></span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var ICON_SUN = '<circle cx="12" cy="12" r="4.5"></circle><path d="M12 2.5v2.3M12 19.2v2.3M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.5 12h2.3M19.2 12h2.3M4.4 19.6l1.6-1.6M18 6l1.6-1.6" stroke-linecap="round" fill="none"></path>';
+  var ICON_MOON = '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z" stroke="none"></path>';
+
+  /* ---------- Theme toggle ---------- */
+  var root = document.getElementById('tsl-page');
+  var themeBtn = document.getElementById('tsl-theme-toggle');
+  var themeLabel = document.getElementById('tsl-theme-label');
+  var themeIcon = document.getElementById('tsl-theme-icon');
+
+  if (window.__tslInitialTheme) {
+    root.setAttribute('data-theme', window.__tslInitialTheme);
+  }
+
+  function currentIsDark() {
+    var attr = root.getAttribute('data-theme');
+    if (attr === 'dark') return true;
+    if (attr === 'light') return false;
+    return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+
+  function reflectTheme() {
+    var dark = currentIsDark();
+    themeBtn.setAttribute('aria-pressed', String(dark));
+    themeLabel.textContent = dark ? 'Light' : 'Dark';
+    themeIcon.innerHTML = dark ? ICON_SUN : ICON_MOON;
+  }
+
+  themeBtn.addEventListener('click', function () {
+    var next = currentIsDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('tsl-theme', next); } catch (e) {}
+    reflectTheme();
+  });
+
+  reflectTheme();
+
+  /* ---------- Card data ---------- */
+  var CARDS = [
+    { cat: 'shopify', badge: 'Shopify', title: 'Shopify Store Setup From Zero', result: 'Went from empty store to first sale in 11 days.', rating: 4.8, href: '/shopify-store-setup' },
+    { cat: 'shopify', badge: 'Shopify', title: 'Product Page Conversion Audit', result: 'Rewrote five product pages, conversion rate up 38 percent.', rating: 4.6, href: '/product-page-conversion-audit' },
+    { cat: 'shopify', badge: 'Shopify', title: 'Shopify Theme Speed Fixes', result: 'Cut load time from 4.2 seconds to 1.6 on a live store.', rating: 4.7, href: '/best-shopify-themes-beginners' },
+    { cat: 'shopify', badge: 'Shopify', title: 'Abandoned Cart Email Flow', result: 'Recovered 640 dollars in the first week of testing.', rating: 4.9, href: '/abandoned-cart-email-flow' },
+    { cat: 'shopify', badge: 'Shopify', title: 'Shopify Apps Worth Paying For', result: 'Tested 42 apps, kept 6, refunded the rest.', rating: 4.5, href: '/shopify-apps-worth-paying-for' },
+    { cat: 'shopify', badge: 'Shopify', title: 'Print on Demand Profit Math', result: 'Real margins after fees, not the numbers in the ads.', rating: 4.4, href: '/print-on-demand-profit-math' },
+    { cat: 'shopify', badge: 'Shopify', title: 'Shopify SEO for Product Pages', result: 'Ranked a product page on page one in 19 days.', rating: 4.7, href: '/shopify-product-page-seo' },
+    { cat: 'shopify', badge: 'Shopify', title: 'Bundling and Upsell Strategy', result: 'Average order value climbed from 41 to 58 dollars.', rating: 4.6, href: '/shopify-bundling-upsells' },
+    { cat: 'shopify', badge: 'Shopify', title: 'Shopify Payment Gateway Comparison', result: 'Switched processors, saved 210 dollars a month in fees.', rating: 4.8, href: '/shopify-payment-gateway-comparison' },
+
+    { cat: 'local-seo', badge: 'Local SEO', title: 'E-commerce SEO', result: 'Went from unverified to the Map Pack in three weeks.', rating: 4.9, href: '/google-business-profile-setup' },
+    { cat: 'local-seo', badge: 'Local SEO', title: 'Google Maps Ranking, Step by Step', result: 'Moved a plumber from rank 14 to rank 2.', rating: 5.0, href: '/google-maps-local-seo-ranking' },
+    { cat: 'local-seo', badge: 'Local SEO', title: 'Local Citation Cleanup', result: 'Fixed 33 duplicate listings, calls rose the same month.', rating: 4.6, href: '/local-citation-building' },
+    { cat: 'local-seo', badge: 'Local SEO', title: 'Local SEO', result: 'Went from 12 reviews to 140 in four months.', rating: 4.8, href: '/google-reviews-strategy' },
+    { cat: 'local-seo', badge: 'Local SEO', title: 'Local Keyword Research for Small Business', result: 'Found 60 monthly searches competitors had completely missed.', rating: 4.5, href: '/local-keyword-research' },
+    { cat: 'local-seo', badge: 'Local SEO', title: 'Service Area Business SEO', result: 'Ranked in nine zip codes with no physical office.', rating: 4.7, href: '/service-area-business-seo' },
+    { cat: 'local-seo', badge: 'Local SEO', title: 'Fiverr SEO service', result: 'Weekly posts added 400 profile views a month.', rating: 4.6, href: '/google-business-posts' },
+    { cat: 'local-seo', badge: 'Local SEO', title: 'SEO Audit', result: 'Twelve local links, zero generic outreach emails.', rating: 4.4, href: '/local-link-building' },
+    { cat: 'local-seo', badge: 'Local SEO', title: 'Technical SEO', result: 'Three locations ranking without cannibalizing each other.', rating: 4.8, href: '/multi-location-seo' },
+
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI Cold Email Sequences', result: '23 percent reply rate on a list of 800 contacts.', rating: 4.7, href: '/ai-cold-email-sequences' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI Customer Support Chatbot Setup', result: 'Cut response time from six hours to four minutes.', rating: 4.6, href: '/ai-customer-support-chatbot' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI Content Repurposing Workflow', result: 'One blog post becomes nine pieces of content, automatically.', rating: 4.8, href: '/ai-content-repurposing-workflow' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI image generation / AI art', result: 'Saved four hours a week on note taking alone.', rating: 4.5, href: '/ai-meeting-notes-automation' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI agents + automation', result: 'Closed the books in 20 minutes instead of half a day.', rating: 4.6, href: '/ai-invoice-bookkeeping-automation' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI chatbots', result: 'Filtered 200 leads down to the 18 that mattered.', rating: 4.9, href: '/ai-lead-qualification-automation' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI video creation', result: 'A month of posts scheduled in one afternoon.', rating: 4.4, href: '/ai-social-media-scheduling' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI agent/chatbot', result: 'Booked seven appointments from calls that used to go to voicemail.', rating: 4.7, href: '/ai-voice-agent-missed-calls' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'n8n AI automation', result: 'Cleaned 1,400 duplicate contacts in one weekend.', rating: 4.8, href: '/ai-crm-data-cleanup' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI voice / voice cloning', result: 'Natural-sounding voiceovers and cloned voices for content and calls.', href: '/ai-voice-cloning' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'AI content editing', result: 'Faster edits for posts, scripts, and product copy with AI.', href: '/ai-content-editing' },
+    { cat: 'ai-automation', badge: 'AI Automation', title: 'GoHighLevel AI automation', result: 'AI workflows built inside GoHighLevel for leads and follow up.', href: '/gohighlevel-ai-automation' },
+
+    { cat: 'logo-design', badge: 'Logo Design', title: 'Custom Logo Design', result: 'An original logo built around your brand and audience.', href: '/logo-design' },
+    { cat: 'logo-design', badge: 'Logo Design', title: 'Logo Redesign and Refresh', result: 'Modernize an existing logo without losing recognition.', href: '/logo-redesign' },
+    { cat: 'logo-design', badge: 'Logo Design', title: 'Brand Kit: Logo, Colors, and Fonts', result: 'Logo files plus a color palette and font pairing for your store.', href: '/brand-kit-logo-design' }
+  ];
+
+  var CAT_COLOR = {
+    'shopify': 'var(--tsl-card-shopify)',
+    'local-seo': 'var(--tsl-card-local)',
+    'ai-automation': 'var(--tsl-card-ai)',
+    'logo-design': 'var(--tsl-card-logo)'
+  };
+
+  var CAT_TINT = {
+    'shopify': 'var(--tsl-card-shopify-tint)',
+    'local-seo': 'var(--tsl-card-local-tint)',
+    'ai-automation': 'var(--tsl-card-ai-tint)',
+    'logo-design': 'var(--tsl-card-logo-tint)'
+  };
+
+  var CAT_NAME = {
+    'all': 'guides',
+    'shopify': 'Shopify guides',
+    'local-seo': 'Local SEO guides',
+    'ai-automation': 'AI Automation guides',
+    'logo-design': 'Logo Design guides'
+  };
+
+  function starMarkup(rating) {
+    var filled = Math.round(rating);
+    var stars = '';
+    for (var i = 0; i < 5; i++) {
+      stars += (i < filled) ? '★' : '☆';
+    }
+    return stars;
+  }
+
+  var grid = document.getElementById('tsl-card-grid');
+
+  function renderCards() {
+    var html = '';
+    for (var i = 0; i < CARDS.length; i++) {
+      var c = CARDS[i];
+      html += '<article class="tsl-card" data-category="' + c.cat + '" style="--tsl-cat-color:' + CAT_COLOR[c.cat] + ';--tsl-cat-tint:' + CAT_TINT[c.cat] + '">' +
+        '<span class="tsl-card-badge">' + c.badge + '</span>' +
+        '<h3 class="tsl-card-title">' + c.title + '</h3>' +
+        '<p class="tsl-card-result">' + c.result + '</p>' +
+        (c.rating ? '<span class="tsl-card-stars" aria-label="Rated ' + c.rating.toFixed(1) + ' out of 5">' + starMarkup(c.rating) + '<span class="tsl-num">' + c.rating.toFixed(1) + '</span></span>' : '') +
+        '<a class="tsl-card-link" href="' + c.href + '">Read the guide</a>' +
+        '</article>';
+    }
+    grid.innerHTML = html;
+  }
+
+  renderCards();
+
+  /* ---------- Filtering ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tsl-tab'));
+  var status = document.getElementById('tsl-directory-status');
+
+  function applyFilter(filter) {
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.tsl-card'));
+    var shown = 0;
+    cards.forEach(function (card) {
+      var match = filter === 'all' || card.getAttribute('data-category') === filter;
+      card.style.display = match ? '' : 'none';
+      if (match) shown++;
+    });
+    tabs.forEach(function (tab) {
+      var active = tab.getAttribute('data-filter') === filter;
+      tab.setAttribute('aria-selected', String(active));
+      tab.setAttribute('tabindex', active ? '0' : '-1');
+    });
+    status.textContent = 'Showing ' + shown + ' of ' + CARDS.length + ' guides' + (filter === 'all' ? '.' : ' in ' + CAT_NAME[filter] + '.');
+  }
+
+  tabs.forEach(function (tab, idx) {
+    tab.addEventListener('click', function () {
+      applyFilter(tab.getAttribute('data-filter'));
+      history.replaceState(null, '', '#' + (tab.getAttribute('data-filter') === 'all' ? 'tsl-directory' : tab.getAttribute('data-filter')));
+    });
+    tab.addEventListener('keydown', function (e) {
+      var next;
+      if (e.key === 'ArrowRight') next = (idx + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft') next = (idx - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home') next = 0;
+      else if (e.key === 'End') next = tabs.length - 1;
+      else return;
+      e.preventDefault();
+      tabs[next].focus();
+      tabs[next].click();
+    });
+  });
+
+  /* ---------- Initial filter from hash ---------- */
+  var validHashes = ['shopify', 'local-seo', 'ai-automation', 'logo-design'];
+  var initialHash = window.location.hash.replace('#', '');
+  if (validHashes.indexOf(initialHash) !== -1) {
+    applyFilter(initialHash);
+  } else {
+    applyFilter('all');
+  }
+
+  /* ---------- Footer email capture ---------- */
+  var footerForm = document.getElementById('tsl-footer-form');
+  footerForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('tsl-footer-email').value.trim();
+    if (!email) return;
+    var subject = encodeURIComponent('Add me to the field notes list');
+    var body = encodeURIComponent('Please add this address to the list: ' + email);
+    window.location.href = 'mailto:hello@thestackora.com?subject=' + subject + '&body=' + body;
+  });
+
+  /* ---------- Footer year ---------- */
+  document.getElementById('tsl-year').textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
